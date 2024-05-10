@@ -16,9 +16,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var thrown_scene = preload("res://scenes/thrown_object.tscn")
 @onready var guidance_line = $GuidanceLine as Sprite2D
 @onready var animated_sprite = $AnimatedSprite2D as AnimatedSprite2D
+@onready var money_label = $Camera2D/MoneyLabel as Label
 
 var nearest_shop = null
 var held_shop = null 
+var money = 1
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -88,10 +90,18 @@ func launchObject():
 	remove_child(held_shop)
 	held_shop = null
 #money
-var money = 1
 
-func add_point():
-	money -=1
-	
+
+func getMoneyLabel()->Label:
+	return money_label
+
+func addMoney(amount):
+	money += amount
+	money_label.text = ("Money:"+str(money))
+
+func subMoney(amount):
+	money -=amount
+	money_label.text = ("Money:"+str(money))
+
 func getmoney():
 	return money

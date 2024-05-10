@@ -64,3 +64,4 @@ position = Vector2(2128, -2065)
 
 [node name="CustomerHandler" type="Node2D" parent="."]
 script = ExtResource("7_65l1q")
+countdowntime = null
