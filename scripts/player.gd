@@ -70,6 +70,7 @@ func setNearestShop(shop:Shop):
 
 func pickupShop(shop:Shop):
 	## Function to pick up shop, it removes shop from parent, then adds shop to player.
+	shop.getPickedUp()
 	shop.get_parent().remove_child(shop) # Removes child from building
 	add_child(shop)
 	shop.global_position = global_position

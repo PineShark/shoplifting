@@ -70,6 +70,3 @@ script = ExtResource("7_65l1q")
 
 [node name="ThrownObject2" parent="." instance=ExtResource("4_ojtdo")]
 position = Vector2(1210, -1706)
-
-[node name="ThrownObject3" parent="." instance=ExtResource("4_ojtdo")]
-position = Vector2(455, -1550)

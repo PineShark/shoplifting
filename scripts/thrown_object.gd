@@ -24,5 +24,7 @@ func _physics_process(delta):
 func _on_body_entered(body):
 	if body.get_collision_layer() == 2 and body != null:
 		# If hit building:
-		body.addShop(held_shop)
-		queue_free()
+		# check if building full:
+		if body.hasSpace():
+			body.addShop(held_shop)
+			queue_free()
