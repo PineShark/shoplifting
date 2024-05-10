@@ -18,6 +18,11 @@ distance = -3.0
 [node name="Player" parent="." instance=ExtResource("3_s4cbc")]
 position = Vector2(1627, -185)
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(8, -13)
+zoom = Vector2(0.5, 0.5)
+limit_smoothed = true
+
 [node name="Road" type="Node" parent="."]
 
 [node name="Road" type="StaticBody2D" parent="Road"]

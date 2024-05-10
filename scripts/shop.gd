@@ -24,6 +24,6 @@ func placedDown(new_position):
 
 func _on_area_2d_body_entered(body):
 	if body.get_collision_layer() == 4: # Player
-		if body is Player:
+		# disabled if body is Player:
 			body.setNearestShop(self)
 			print("Player near shop")
