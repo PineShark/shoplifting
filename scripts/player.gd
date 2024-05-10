@@ -50,24 +50,9 @@ func _physics_process(delta):
 			pickupShop(nearest_shop)
 
 	# Handle throwing
-	if held_shop != null:
-		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-				if mouse_pressed == false:
-					mouse_pressed = true
-				# draw line 
-				guidance_line.visible = true
-				position2 = get_global_mouse_position()
-				guidance_line.global_position = global_position
-				guidance_line.rotation = global_position.angle_to_point(position2)
-				guidance_line.scale.x = global_position.distance_to(position2)/250
-				if guidance_line.scale.x > 600:
-					guidance_line.scale.x = 600
-				print(guidance_line.scale.x)
-		elif mouse_pressed == true:
-			mouse_pressed = false
-			position2 = get_global_mouse_position()
+	elif held_shop != null:
+		if Input.is_action_just_pressed("Grab"):
 			launchObject()
-			guidance_line.visible = false
 
 
 	# flip the sprite
@@ -89,13 +74,16 @@ func pickupShop(shop:Shop):
 	held_shop = shop
 
 func launchObject():
-	var angle = global_position.angle_to_point(position2)
-	var distance = global_position.distance_to(position2)/2
-	if distance > 600:
-		distance = 600
+	# Figure out angle and throw object at that angle
+	var angle = 0
+	if animated_sprite.flip_h == false:
+		angle = -PI/6
+	else:
+		angle = -5*PI/6
+
 	var thrown_object = thrown_scene.instantiate()
 	thrown_object.global_position = global_position
 	get_tree().root.add_child(thrown_object)
-	thrown_object.setParameters(500*distance,angle,held_shop)
+	thrown_object.setParameters(60000,angle,held_shop)
 	remove_child(held_shop)
 	held_shop = null
