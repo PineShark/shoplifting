@@ -7,6 +7,7 @@ var picked_up = false
 var set_down = false
 var building:Building = null
 var earnings = 1
+@onready var sprite = $Sprite2D
 
 func _set(property, value):
 	property = value
@@ -24,6 +25,9 @@ func placedDown(new_position,owner_building = null):
 	global_position = new_position
 	building = owner_building 
 	set_down = true # Make it able to be picked up
+
+func getSprite():
+	return sprite.texture
 
 func getPickedUp():
 	if building!=null:
