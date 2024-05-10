@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://05awt3gy35w8"]
+[gd_scene load_steps=3 format=3 uid="uid://lb06fyk0f5in"]
 
 [ext_resource type="Script" path="res://scripts/killzone.gd" id="1_7sbwf"]
 
@@ -6,7 +6,6 @@
 size = Vector2(376, 20)
 
 [node name="Killzone" type="Area2D"]
-collision_mask = 4
 script = ExtResource("1_7sbwf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

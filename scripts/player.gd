@@ -73,7 +73,7 @@ func pickupShop(shop:Shop):
 	shop.getPickedUp()
 	shop.get_parent().remove_child(shop) # Removes child from building
 	add_child(shop)
-	shop.global_position = global_position
+	shop.global_position = global_position + Vector2(-250,-350)
 	held_shop = shop
 
 func launchObject():
