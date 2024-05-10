@@ -87,3 +87,11 @@ func launchObject():
 	thrown_object.setParameters(60000,angle,held_shop)
 	remove_child(held_shop)
 	held_shop = null
+#money
+var money = 1
+
+func add_point():
+	money -=1
+	
+func getmoney():
+	return money

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://djrmi0j4t8xv0"]
+[gd_scene load_steps=9 format=3 uid="uid://djrmi0j4t8xv0"]
 
 [ext_resource type="Texture2D" uid="uid://dcxlsminbhlh6" path="res://art/temp_sprites/light blue square.png" id="1_qfbly"]
 [ext_resource type="PackedScene" uid="uid://c2ox1uwcae37s" path="res://scenes/player.tscn" id="3_s4cbc"]
@@ -10,10 +10,18 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mt05"]
 size = Vector2(5752, 255)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1e8cw"]
+distance = -3.0
+
 [node name="World" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("3_s4cbc")]
 position = Vector2(1627, -185)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(8, -13)
+zoom = Vector2(0.5, 0.5)
+limit_smoothed = true
 
 [node name="Road" type="Node" parent="."]
 
@@ -49,6 +57,9 @@ debug_color = Color(0.808447, 0.224566, 0.85237, 0.42)
 position = Vector2(-176, 243)
 collision_layer = 2
 collision_mask = 3
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("WorldBoundaryShape2D_1e8cw")
 
 [node name="ThrownObject" parent="." instance=ExtResource("4_ojtdo")]
 position = Vector2(646, -1049)
