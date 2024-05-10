@@ -17,7 +17,7 @@ func addShop(shop:Shop):
 			shop_slot = shop
 			shop_set = true
 			add_child(shop)
-			shop.setPosition(global_position+position_array[0])
+			shop.placedDown(global_position+position_array[0])
 			break
 	
 	if not shop_set:

@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7ywcnwhbar5x"]
+[gd_scene load_steps=6 format=3 uid="uid://b7ywcnwhbar5x"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_4wtb3"]
 [ext_resource type="Texture2D" uid="uid://dnnpvx5weujsf" path="res://art/temp_sprites/redcircle.png" id="1_g4vbx"]
-[ext_resource type="Texture2D" uid="uid://et5lvxka6l0j" path="res://art/temp_sprites/beige square.png" id="3_jhpub"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rwtg7"]
 atlas = ExtResource("1_g4vbx")
@@ -35,9 +34,3 @@ sprite_frames = SubResource("SpriteFrames_e6a5x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_a7d0f")
-
-[node name="GuidanceLine" type="Sprite2D" parent="."]
-visible = false
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("3_jhpub")
-centered = false
