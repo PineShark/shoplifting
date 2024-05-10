@@ -58,9 +58,9 @@ func _physics_process(delta):
 
 
 	# flip the sprite
-	if direction >0:
+	if direction <0:
 		animated_sprite.flip_h = false
-	elif direction <0:
+	elif direction >0:
 		animated_sprite.flip_h = true
 	move_and_slide()
 
@@ -80,9 +80,9 @@ func launchObject():
 	# Figure out angle and throw object at that angle
 	var angle = 0
 	if animated_sprite.flip_h == false:
-		angle = -PI/6
-	else:
 		angle = -5*PI/6
+	else:
+		angle = -PI/6
 
 	var thrown_object = thrown_scene.instantiate()
 	thrown_object.global_position = global_position
