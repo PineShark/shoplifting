@@ -29,9 +29,10 @@ func addShop(shop:Shop):
 
 func searchForTag(tag:String):
 	for shop in shop_array:
-		if shop.tag == tag:
-			return shop.earnings
-	return 0
+		if shop != null:
+			if shop.tag == tag:
+				return shop.earnings
+		return 0
 
 
 func removeShop(shop:Shop):
