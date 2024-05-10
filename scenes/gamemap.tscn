@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://djrmi0j4t8xv0"]
+[gd_scene load_steps=9 format=3 uid="uid://djrmi0j4t8xv0"]
 
 [ext_resource type="Texture2D" uid="uid://dcxlsminbhlh6" path="res://art/temp_sprites/light blue square.png" id="1_qfbly"]
 [ext_resource type="PackedScene" uid="uid://b7ywcnwhbar5x" path="res://scenes/player.tscn" id="3_s4cbc"]
 [ext_resource type="PackedScene" uid="uid://05awt3gy35w8" path="res://scenes/killzone.tscn" id="4_khwdw"]
-[ext_resource type="PackedScene" uid="uid://538nax6pw4se" path="res://scenes/thrown_object.tscn" id="4_ojtdo"]
 [ext_resource type="PackedScene" uid="uid://bx8vpiu1yw7fl" path="res://scenes/building.tscn" id="5_32qsi"]
+[ext_resource type="PackedScene" uid="uid://b2e3ogx6a43bo" path="res://scenes/toystore.tscn" id="6_m3i4k"]
+[ext_resource type="PackedScene" uid="uid://c4b2n82owajbn" path="res://scenes/milkery.tscn" id="7_3yvm6"]
 [ext_resource type="Script" path="res://scripts/CustomerHandler.gd" id="7_65l1q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mt05"]
@@ -51,9 +52,6 @@ position = Vector2(-176, 243)
 collision_layer = 2
 collision_mask = 3
 
-[node name="ThrownObject" parent="." instance=ExtResource("4_ojtdo")]
-position = Vector2(1911, -867)
-
 [node name="Building" parent="." instance=ExtResource("5_32qsi")]
 position = Vector2(631, -851)
 size = 2
@@ -70,8 +68,8 @@ size = 2
 [node name="CustomerHandler" type="Node2D" parent="."]
 script = ExtResource("7_65l1q")
 
-[node name="ThrownObject2" parent="." instance=ExtResource("4_ojtdo")]
-position = Vector2(1210, -1706)
+[node name="Toystore" parent="." instance=ExtResource("6_m3i4k")]
+position = Vector2(2843, -703)
 
-[node name="ThrownObject3" parent="." instance=ExtResource("4_ojtdo")]
-position = Vector2(455, -1550)
+[node name="Milkery" parent="." instance=ExtResource("7_3yvm6")]
+position = Vector2(1304, -1872)

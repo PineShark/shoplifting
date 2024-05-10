@@ -2,13 +2,16 @@ class_name ThrownObject
 extends RigidBody2D
 
 var held_shop = preload("res://scenes/shop.tscn").instantiate()
+@onready var sprite2D = $Sprite2D as Sprite2D
 var force = 0
 var angle = 0
 
-func setParameters(new_force,new_angle,shop):
+func setParameters(new_force,new_angle,shop:Shop):
 	force = new_force
 	angle = new_angle
 	held_shop = shop
+	sprite2D.texture = held_shop.getSprite()
+	
 
 
 func _physics_process(delta): 
