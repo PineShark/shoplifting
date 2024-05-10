@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://djrmi0j4t8xv0"]
+[gd_scene load_steps=7 format=3 uid="uid://djrmi0j4t8xv0"]
 
 [ext_resource type="Texture2D" uid="uid://dcxlsminbhlh6" path="res://art/temp_sprites/light blue square.png" id="1_qfbly"]
 [ext_resource type="Texture2D" uid="uid://dp6miife85ttk" path="res://art/temp_sprites/2storybuilding.png" id="2_ajcb8"]
-[ext_resource type="PackedScene" uid="uid://c2ox1uwcae37s" path="res://scenes/player.tscn" id="3_s4cbc"]
-[ext_resource type="PackedScene" uid="uid://lb06fyk0f5in" path="res://scenes/killzone.tscn" id="4_khwdw"]
+[ext_resource type="PackedScene" uid="uid://b7ywcnwhbar5x" path="res://scenes/player.tscn" id="3_s4cbc"]
+[ext_resource type="PackedScene" uid="uid://05awt3gy35w8" path="res://scenes/killzone.tscn" id="4_khwdw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mt05"]
 size = Vector2(5752, 255)
@@ -11,15 +11,10 @@ size = Vector2(5752, 255)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ker3v"]
 size = Vector2(504, 687)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1e8cw"]
-distance = -3.0
-
 [node name="World" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("3_s4cbc")]
-position = Vector2(1617, -189)
-collision_layer = 1
-collision_mask = 1
+position = Vector2(1623, -189)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(8, -13)
@@ -29,6 +24,7 @@ limit_smoothed = true
 [node name="Road" type="Node" parent="."]
 
 [node name="Road" type="StaticBody2D" parent="Road"]
+collision_mask = 0
 
 [node name="LightBlueSquare" type="Sprite2D" parent="Road/Road"]
 position = Vector2(2749.5, 0)
@@ -42,7 +38,8 @@ debug_color = Color(0.808447, 0.224566, 0.85237, 0.42)
 
 [node name="Road2" type="StaticBody2D" parent="Road"]
 position = Vector2(-581, -1231)
-collision_mask = 2
+collision_layer = 32
+collision_mask = 0
 
 [node name="LightBlueSquare" type="Sprite2D" parent="Road/Road2"]
 position = Vector2(2749.5, 0)
@@ -70,8 +67,5 @@ shape = SubResource("RectangleShape2D_ker3v")
 
 [node name="Killzone" parent="." instance=ExtResource("4_khwdw")]
 position = Vector2(-176, 243)
-collision_layer = 2
-collision_mask = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-shape = SubResource("WorldBoundaryShape2D_1e8cw")
+collision_layer = 0
+collision_mask = 4
