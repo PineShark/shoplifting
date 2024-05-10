@@ -1,20 +1,54 @@
-[gd_scene load_steps=8 format=3 uid="uid://djrmi0j4t8xv0"]
+[gd_scene load_steps=11 format=3 uid="uid://djrmi0j4t8xv0"]
 
+[ext_resource type="Texture2D" uid="uid://bdyrbgvvni3lr" path="res://art/Sprite sheets/Road Sprite Sheet.png" id="1_7kmfa"]
 [ext_resource type="Texture2D" uid="uid://dcxlsminbhlh6" path="res://art/temp_sprites/light blue square.png" id="1_qfbly"]
-[ext_resource type="PackedScene" uid="uid://b7ywcnwhbar5x" path="res://scenes/player.tscn" id="3_s4cbc"]
-[ext_resource type="PackedScene" uid="uid://05awt3gy35w8" path="res://scenes/killzone.tscn" id="4_khwdw"]
-[ext_resource type="PackedScene" uid="uid://538nax6pw4se" path="res://scenes/thrown_object.tscn" id="4_ojtdo"]
-[ext_resource type="PackedScene" uid="uid://bx8vpiu1yw7fl" path="res://scenes/building.tscn" id="5_32qsi"]
+[ext_resource type="PackedScene" uid="uid://c2ox1uwcae37s" path="res://scenes/player.tscn" id="3_s4cbc"]
+[ext_resource type="PackedScene" uid="uid://lb06fyk0f5in" path="res://scenes/killzone.tscn" id="4_khwdw"]
+[ext_resource type="PackedScene" path="res://scenes/thrown_object.tscn" id="4_ojtdo"]
+[ext_resource type="PackedScene" path="res://scenes/building.tscn" id="5_32qsi"]
 [ext_resource type="Script" path="res://scripts/CustomerHandler.gd" id="7_65l1q"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6lfmi"]
+texture = ExtResource("1_7kmfa")
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+4:3/0 = 0
+4:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:3/0/physics_layer_0/angular_velocity = 0.0
+2:4/0 = 0
+2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:4/0/physics_layer_0/angular_velocity = 0.0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:4/0 = 0
+3:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:4/0/physics_layer_0/angular_velocity = 0.0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0 = 0
+4:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:4/0/physics_layer_0/angular_velocity = 0.0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_7mb54"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_6lfmi")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mt05"]
 size = Vector2(5752, 255)
 
 [node name="World" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("3_s4cbc")]
+[node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 position = Vector2(1627, -185)
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_7mb54")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 196608, 4, 131069, 196608, 4, 131070, 196608, 4, 131071, 196608, 4, 65536, 196608, 4, 65537, 196608, 4, 65538, 196608, 4, 1, 196608, 4, 2, 196608, 4, 3, 196608, 4, 4, 196608, 4, 5, 196608, 4, 6, 196608, 4, 7, 196608, 4, 65535, 196608, 4, 65534, 196608, 4, 65533, 196608, 4, 65532, 196608, 4, 65531, 196608, 4, 65530, 196608, 4, 65528, 196608, 4, 65529, 196608, 4, 65527, 196608, 4, 65526, 196608, 4, 65525, 196608, 4, 65524, 196608, 4, 65523, 196608, 4, 65522, 196608, 4, 65521, 196608, 4, 65520, 196608, 4, 65519, 196608, 4, 65518, 196608, 4, 65517, 196608, 4, 65516, 196608, 4, 65513, 196608, 4, 65512, 196608, 4, 65511, 196608, 4, 65510, 196608, 4, 65514, 196608, 4, 65515, 196608, 4, 65509, 196608, 4, 65508, 196608, 4, 8, 196608, 4, 9, 196608, 4, 10, 196608, 4, 11, 196608, 4, 12, 196608, 4, 13, 196608, 4, 14, 196608, 4, 15, 196608, 4, 16, 196608, 4, 17, 196608, 4, 18, 196608, 4, 19, 196608, 4, 20, 196608, 4, 21, 196608, 4, 22, 196608, 4, 23, 196608, 4, 24, 196608, 4, 25, 196608, 4, 26, 196608, 4, 27, 196608, 4, 28, 196608, 4, 29, 196608, 4, 30, 196608, 4, 31, 196608, 4, 32, 196608, 4, 33, 196608, 4, 34, 196608, 4, 35, 196608, 4, 36, 196608, 4, 37, 196608, 4, 38, 196608, 4, 39, 196608, 4, 40, 196608, 4, 41, 196608, 4, 42, 196608, 4, 43, 196608, 4, 44, 196608, 4, 45, 196608, 4, 46, 196608, 4, 47, 196608, 4, 48, 196608, 4, 49, 196608, 4, 50, 196608, 4, 51, 196608, 4, 52, 196608, 4, 53, 196608, 4, 54, 196608, 4, 55, 196608, 4, 56, 196608, 4, 57, 196608, 4, 58, 196608, 4, 59, 196608, 4, 60, 196608, 4, 61, 196608, 4, 62, 196608, 4, 63, 196608, 4)
+
+[node name="Player" parent="." instance=ExtResource("3_s4cbc")]
+position = Vector2(1628, -226)
 
 [node name="Road" type="Node" parent="."]
 
@@ -64,7 +98,6 @@ size = 2
 
 [node name="Building3" parent="." instance=ExtResource("5_32qsi")]
 position = Vector2(2128, -2065)
-collision_mask = 33
 size = 2
 
 [node name="CustomerHandler" type="Node2D" parent="."]

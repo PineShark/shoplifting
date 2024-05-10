@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://chi8vybttuppg"]
+[gd_scene load_steps=7 format=3 uid="uid://dbyco0if58in2"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_gd4xh"]
 [ext_resource type="Texture2D" uid="uid://cyxjrxbwyhsvm" path="res://art/Enemy.png" id="1_jvif8"]
-[ext_resource type="PackedScene" uid="uid://05awt3gy35w8" path="res://scenes/killzone.tscn" id="2_bmurg"]
+[ext_resource type="PackedScene" uid="uid://lb06fyk0f5in" path="res://scenes/killzone.tscn" id="2_bmurg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ptc8s"]
 atlas = ExtResource("1_jvif8")
@@ -19,6 +19,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hobj4"]
+size = Vector2(380, 20)
+
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_gd4xh")
 
@@ -30,3 +33,7 @@ sprite_frames = SubResource("SpriteFrames_i26ld")
 position = Vector2(0, -19)
 rotation = 1.5708
 scale = Vector2(0.1, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, -5.68434e-14)
+shape = SubResource("RectangleShape2D_hobj4")
