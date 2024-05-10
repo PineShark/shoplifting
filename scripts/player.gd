@@ -87,7 +87,7 @@ func launchObject():
 	var thrown_object = thrown_scene.instantiate()
 	thrown_object.global_position = global_position
 	get_tree().root.add_child(thrown_object)
-	thrown_object.setParameters(60000,angle,held_shop)
+	thrown_object.setParameters(90000,angle,held_shop)
 	remove_child(held_shop)
 	held_shop = null
 #money
