@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://galt2neix2w1"
-path="res://.godot/imported/Hold1.png-aa7c18218e34bf63f2c37778a83622bb.ctex"
+uid="uid://nymnhw1k88x5"
+path="res://.godot/imported/Hold-Sheet.png-a68793a48f27601c7a1211244d9212a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Player/Hold1.png"
-dest_files=["res://.godot/imported/Hold1.png-aa7c18218e34bf63f2c37778a83622bb.ctex"]
+source_file="res://art/Player/Hold-Sheet.png"
+dest_files=["res://.godot/imported/Hold-Sheet.png-a68793a48f27601c7a1211244d9212a9.ctex"]
 
 [params]
 
