@@ -1,11 +1,21 @@
+class_name Enemy
 extends Node2D
 var target = Vector2(410,0)
 var direction = 0
 var stolen_money = false
-@onready var player = $"../Player"
-@onready var Money_Label = $"../Player/Camera2D/MoneyLabel"
+@onready var player:Player = null
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+func setPlayer(newplayer:Player):
+	player = newplayer
+
+func setPosition(new_position:Vector2):
+	global_position = new_position
+
+func setTarget(new_target:Vector2):
+	target = new_target
+
 func _process(delta):
 	
 	var deltax = target.x - global_position.x
@@ -13,11 +23,10 @@ func _process(delta):
 		direction = 1 #Right
 	else:
 		direction = -1 #Left	
-	position.x += 600* delta *direction
-	if not stolen_money:
-		if position.x-target.x < 25:
-			player.add_point()
-			Money_Label.text =  str(player.getmoney()) + " money"
+	position.x += 600 * delta * direction
+	if not stolen_money and player!=null:
+		if position.x-target.x < 50:
+			player.subMoney(1)
 			stolen_money = true
 	else:
 		pass 
