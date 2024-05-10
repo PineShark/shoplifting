@@ -1,28 +1,29 @@
 [gd_scene load_steps=6 format=3 uid="uid://c2ox1uwcae37s"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_4wtb3"]
-[ext_resource type="Texture2D" uid="uid://dnnpvx5weujsf" path="res://art/temp_sprites/redcircle.png" id="1_g4vbx"]
+[ext_resource type="Texture2D" uid="uid://cn0x18nxif0q7" path="res://art/player.png" id="2_a3yrn"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rwtg7"]
-atlas = ExtResource("1_g4vbx")
-region = Rect2(0, 0, 100, 100)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ippe8"]
+atlas = ExtResource("2_a3yrn")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e6a5x"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rwtg7")
+"texture": SubResource("AtlasTexture_ippe8")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_a7d0f"]
-radius = 37.054
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c44pa"]
+size = Vector2(20, 45)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
+position = Vector2(0, -24)
 collision_layer = 4
 script = ExtResource("1_4wtb3")
 
@@ -32,4 +33,5 @@ scale = Vector2(0.745, 0.745)
 sprite_frames = SubResource("SpriteFrames_e6a5x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_a7d0f")
+position = Vector2(-2, 1)
+shape = SubResource("RectangleShape2D_c44pa")

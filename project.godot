@@ -54,3 +54,7 @@ Grab={
 2d_physics/layer_4="Customers"
 2d_physics/layer_5="Projectiles"
 2d_physics/layer_6="Ground2"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
