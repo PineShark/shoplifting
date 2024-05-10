@@ -13,7 +13,6 @@ size = Vector2(5752, 255)
 [node name="World" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("3_s4cbc")]
-texture_filter = 1
 position = Vector2(1627, -185)
 
 [node name="Road" type="Node" parent="."]
@@ -64,7 +63,6 @@ size = 2
 
 [node name="Building3" parent="." instance=ExtResource("5_32qsi")]
 position = Vector2(2128, -2065)
-collision_mask = 33
 size = 2
 
 [node name="CustomerHandler" type="Node2D" parent="."]
@@ -72,6 +70,3 @@ script = ExtResource("7_65l1q")
 
 [node name="ThrownObject2" parent="." instance=ExtResource("4_ojtdo")]
 position = Vector2(1210, -1706)
-
-[node name="ThrownObject3" parent="." instance=ExtResource("4_ojtdo")]
-position = Vector2(455, -1550)

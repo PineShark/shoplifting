@@ -11,18 +11,22 @@ func setParameters(new_force,new_angle,shop):
 	held_shop = shop
 
 
-func _physics_process(delta):
+func _physics_process(delta): 
 	if force>0:
 		apply_central_force(Vector2(1,0).rotated(angle)*force)
 		force = 0
-	if linear_velocity==Vector2(0,0):
+	if linear_velocity.length()==0:
 		# Delete self, creating shop in its place
 		get_tree().root.add_child(held_shop)
-		held_shop.global_position = global_position
+		held_shop.global_position = global_position+Vector2(-240,-150)
 		queue_free()
+
+
 
 func _on_body_entered(body):
 	if body.get_collision_layer() == 2 and body != null:
 		# If hit building:
-		body.addShop(held_shop)
-		queue_free()
+		# check if building full:
+		if body.hasSpace():
+			body.addShop(held_shop)
+			queue_free()

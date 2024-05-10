@@ -58,9 +58,9 @@ func _physics_process(delta):
 
 
 	# flip the sprite
-	if direction >0:
+	if direction <0:
 		animated_sprite.flip_h = false
-	elif direction <0:
+	elif direction >0:
 		animated_sprite.flip_h = true
 	move_and_slide()
 
@@ -70,6 +70,7 @@ func setNearestShop(shop:Shop):
 
 func pickupShop(shop:Shop):
 	## Function to pick up shop, it removes shop from parent, then adds shop to player.
+	shop.getPickedUp()
 	shop.get_parent().remove_child(shop) # Removes child from building
 	add_child(shop)
 	shop.global_position = global_position
@@ -79,14 +80,14 @@ func launchObject():
 	# Figure out angle and throw object at that angle
 	var angle = 0
 	if animated_sprite.flip_h == false:
-		angle = -PI/6
-	else:
 		angle = -5*PI/6
+	else:
+		angle = -PI/6
 
 	var thrown_object = thrown_scene.instantiate()
 	thrown_object.global_position = global_position
 	get_tree().root.add_child(thrown_object)
-	thrown_object.setParameters(60000,angle,held_shop)
+	thrown_object.setParameters(90000,angle,held_shop)
 	remove_child(held_shop)
 	held_shop = null
 #money
