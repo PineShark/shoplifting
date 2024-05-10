@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx8vpiu1yw7fl"]
+
+[ext_resource type="Texture2D" uid="uid://dp6miife85ttk" path="res://art/temp_sprites/2storybuilding.png" id="1_eaq53"]
+[ext_resource type="Script" path="res://scripts/building.gd" id="1_g6wg5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ker3v"]
+size = Vector2(504, 687)
+
+[node name="Building" type="RigidBody2D"]
+collision_layer = 2
+script = ExtResource("1_g6wg5")
+
+[node name="2Storybuilding" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_eaq53")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(253, 343)
+shape = SubResource("RectangleShape2D_ker3v")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 343)

@@ -35,7 +35,7 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
 	move_and_slide()
 ## handle going through platform  (Need help)
 	if Input.is_action_just_pressed("Down") and is_on_floor() and get_collision_mask_value(2):
