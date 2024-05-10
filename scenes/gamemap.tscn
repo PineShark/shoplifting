@@ -1,13 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://djrmi0j4t8xv0"]
+[gd_scene load_steps=6 format=3 uid="uid://djrmi0j4t8xv0"]
 
 [ext_resource type="Texture2D" uid="uid://dcxlsminbhlh6" path="res://art/temp_sprites/light blue square.png" id="1_qfbly"]
-[ext_resource type="Texture2D" uid="uid://dp6miife85ttk" path="res://art/temp_sprites/2storybuilding.png" id="2_ajcb8"]
+[ext_resource type="PackedScene" uid="uid://bx8vpiu1yw7fl" path="res://scenes/building.tscn" id="2_br61v"]
+[ext_resource type="PackedScene" uid="uid://538nax6pw4se" path="res://scenes/thrown_object.tscn" id="3_h5gtl"]
+[ext_resource type="Texture2D" uid="uid://et5lvxka6l0j" path="res://art/temp_sprites/beige square.png" id="5_o6hvg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mt05"]
 size = Vector2(5752, 255)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ker3v"]
-size = Vector2(504, 687)
 
 [node name="World" type="Node2D"]
 
@@ -29,6 +28,7 @@ zoom = Vector2(0.2, 0.2)
 
 [node name="Road2" type="StaticBody2D" parent="."]
 position = Vector2(-581, -1231)
+collision_layer = 32
 
 [node name="LightBlueSquare" type="Sprite2D" parent="Road2"]
 position = Vector2(2749.5, 0)
@@ -40,15 +40,14 @@ position = Vector2(2748, -0.5)
 shape = SubResource("RectangleShape2D_3mt05")
 debug_color = Color(0.808447, 0.224566, 0.85237, 0.42)
 
-[node name="Building" type="StaticBody2D" parent="."]
-position = Vector2(656, -481)
-collision_layer = 2
-collision_mask = 0
+[node name="Building" parent="." instance=ExtResource("2_br61v")]
 
-[node name="2Storybuilding" type="Sprite2D" parent="Building"]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_ajcb8")
+[node name="ThrownObject" parent="." instance=ExtResource("3_h5gtl")]
+position = Vector2(946, -2115)
+collision_mask = 3
+mass = 2.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Building"]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_ker3v")
+[node name="GuidanceLine" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_o6hvg")
+centered = false

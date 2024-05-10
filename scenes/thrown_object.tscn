@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://538nax6pw4se"]
+
+[ext_resource type="Script" path="res://scripts/thrown_object.gd" id="1_nxapx"]
+[ext_resource type="Texture2D" uid="uid://cgf6pbeul2ery" path="res://art/temp_sprites/shop.png" id="1_oa3xb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cmjr"]
+size = Vector2(478, 318)
+
+[node name="ThrownObject" type="RigidBody2D"]
+position = Vector2(4737, -425)
+script = ExtResource("1_nxapx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_oa3xb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4cmjr")

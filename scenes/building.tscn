@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx8vpiu1yw7fl"]
+
+[ext_resource type="Texture2D" uid="uid://dp6miife85ttk" path="res://art/temp_sprites/2storybuilding.png" id="1_eaq53"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ker3v"]
+size = Vector2(504, 687)
+
+[node name="Building" type="StaticBody2D"]
+position = Vector2(656, -481)
+collision_layer = 2
+collision_mask = 0
+
+[node name="2Storybuilding" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_eaq53")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ker3v")
