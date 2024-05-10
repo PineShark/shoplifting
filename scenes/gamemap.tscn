@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://djrmi0j4t8xv0"]
 
 [ext_resource type="Texture2D" uid="uid://dcxlsminbhlh6" path="res://art/temp_sprites/light blue square.png" id="1_qfbly"]
-[ext_resource type="PackedScene" uid="uid://c2ox1uwcae37s" path="res://scenes/player.tscn" id="3_s4cbc"]
-[ext_resource type="PackedScene" uid="uid://lb06fyk0f5in" path="res://scenes/killzone.tscn" id="4_khwdw"]
-[ext_resource type="PackedScene" path="res://scenes/thrown_object.tscn" id="4_ojtdo"]
-[ext_resource type="PackedScene" path="res://scenes/building.tscn" id="5_32qsi"]
-[ext_resource type="PackedScene" uid="uid://dbyco0if58in2" path="res://scenes/enemy.tscn" id="6_2eofr"]
+[ext_resource type="PackedScene" uid="uid://b7ywcnwhbar5x" path="res://scenes/player.tscn" id="3_s4cbc"]
+[ext_resource type="PackedScene" uid="uid://05awt3gy35w8" path="res://scenes/killzone.tscn" id="4_khwdw"]
+[ext_resource type="PackedScene" uid="uid://538nax6pw4se" path="res://scenes/thrown_object.tscn" id="4_ojtdo"]
+[ext_resource type="PackedScene" uid="uid://bx8vpiu1yw7fl" path="res://scenes/building.tscn" id="5_32qsi"]
+[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="6_2eofr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mt05"]
 size = Vector2(5752, 255)
