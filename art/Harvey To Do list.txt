@@ -1,0 +1,13 @@
+Needs
+Player Animations
+NPC animations
+Stores
+Robber sprite + animations
+UI elements
+
+Wants
+Update art to be consistent with style
+Title screen
+Visual effects (eg display money earned)
+
+anything else I may have forgotten.
