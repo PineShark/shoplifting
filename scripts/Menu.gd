@@ -6,7 +6,7 @@ var mouse_down = false
 var selected_card = null
 @onready var timeLabel = $timeLabel as Label
 @onready var interimMenu = $InterimMenu as Control
-@onready var card_scene = preload("res://scenes/card.tscn") as PackedScene
+@onready var card_scene = preload("res://scenes/cards/card.tscn") as PackedScene
 @onready var throw_object_scene = preload("res://scenes/thrown_object.tscn") as PackedScene
 @onready var player = $"../.." as Player
 

@@ -4,13 +4,14 @@
 [ext_resource type="Script" path="res://scripts/building.gd" id="1_g6wg5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ker3v"]
-size = Vector2(504, 687)
+size = Vector2(504, 622.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12qgl"]
 size = Vector2(50.8, 20)
 
 [node name="Building" type="RigidBody2D"]
 collision_layer = 2
+collision_mask = 33
 script = ExtResource("1_g6wg5")
 
 [node name="2Storybuilding" type="Sprite2D" parent="."]
@@ -20,7 +21,7 @@ texture = ExtResource("1_eaq53")
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(253, 343)
+position = Vector2(253, 310.75)
 shape = SubResource("RectangleShape2D_ker3v")
 
 [node name="Marker2D" type="Marker2D" parent="."]
