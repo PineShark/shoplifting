@@ -12,8 +12,8 @@ var purchased = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func setCustomerStats(texture:Texture2D,tag:String):
-	sprite.sprite_frames.set_frame("default",0,texture,1)
+func setCustomerStats(texture:SpriteFrames,tag:String):
+	sprite.sprite_frames = texture
 	looking_for = tag
 
 func setPlayer(newplayer:Player):

@@ -1,33 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbyco0if58in2"]
+[gd_scene load_steps=5 format=3 uid="uid://dbyco0if58in2"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_gd4xh"]
-[ext_resource type="Texture2D" uid="uid://cyxjrxbwyhsvm" path="res://art/Enemy.png" id="1_jvif8"]
 [ext_resource type="PackedScene" uid="uid://lb06fyk0f5in" path="res://scenes/killzone.tscn" id="2_bmurg"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ptc8s"]
-atlas = ExtResource("1_jvif8")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_i26ld"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ptc8s")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://cw3o3xdn7imiv" path="res://art/temp_sprites/Enemy.png" id="3_y8rtp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n552n"]
 
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_gd4xh")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-position = Vector2(0, -17)
-sprite_frames = SubResource("SpriteFrames_i26ld")
 
 [node name="Killzone" parent="." instance=ExtResource("2_bmurg")]
 position = Vector2(0, -19)
@@ -42,5 +22,9 @@ collision_mask = 4
 position = Vector2(0, -15)
 scale = Vector2(16, 16)
 shape = SubResource("CircleShape2D_n552n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("3_y8rtp")
 
 [connection signal="body_entered" from="pickupZone" to="." method="_on_pickup_zone_body_entered"]
