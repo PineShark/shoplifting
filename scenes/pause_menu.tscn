@@ -1,9 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c741e6io1id78"]
+[gd_scene load_steps=2 format=3 uid="uid://dar77my7yuet8"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_ph4tk"]
 
 [node name="Pause_Menu" type="Control"]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,6 +43,7 @@ layout_mode = 2
 text = "QUIT"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 3
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

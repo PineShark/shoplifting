@@ -6,6 +6,7 @@ func _ready():
 # Called when the node enters the scene tree for the first time.
 func resume():
 	get_tree().paused = false
+	visible = false
 
 
 
@@ -16,6 +17,7 @@ func pause():
 func testEsc():
 	if Input.is_action_just_pressed("Pause") and get_tree().paused == false:
 		pause()
+		visible = true
 	elif Input.is_action_just_pressed("Pause") and get_tree().paused == true:
 		resume()
 
