@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0stkhbak871q"]
+
+[ext_resource type="Script" path="res://scripts/butcherycard.gd" id="1_fn61e"]
+[ext_resource type="Texture2D" uid="uid://c4ccwuurftf7e" path="res://art/cards/butchery.png" id="2_ptm5c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h41si"]
+size = Vector2(16.3265, 20)
+
+[node name="ButcheryCard" type="Node2D"]
+script = ExtResource("1_fn61e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_ptm5c")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(7.84, 12.8)
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_h41si")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

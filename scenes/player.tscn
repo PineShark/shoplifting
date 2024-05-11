@@ -115,7 +115,7 @@ offset_left = 352.0
 offset_top = -316.0
 offset_right = 392.0
 offset_bottom = -293.0
-text = "dolla"
+text = "Money: 10"
 
 [node name="Menu" type="Node2D" parent="Camera2D"]
 process_mode = 3
@@ -143,13 +143,21 @@ offset_right = 582.0
 offset_bottom = 322.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_hgjnr")
 
-[node name="Button" type="Button" parent="Camera2D/Menu/InterimMenu"]
+[node name="PassButton" type="Button" parent="Camera2D/Menu/InterimMenu"]
 layout_mode = 0
 offset_left = -108.0
 offset_top = 120.0
 offset_right = 112.0
 offset_bottom = 184.0
 text = "Pass"
+
+[node name="DrawButton" type="Button" parent="Camera2D/Menu/InterimMenu"]
+layout_mode = 0
+offset_left = -106.0
+offset_top = -151.0
+offset_right = 111.0
+offset_bottom = -81.0
+text = "Draw"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -168,4 +176,5 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_jhpub")
 centered = false
 
-[connection signal="pressed" from="Camera2D/Menu/InterimMenu/Button" to="Camera2D/Menu" method="_on_pass_button_pressed"]
+[connection signal="pressed" from="Camera2D/Menu/InterimMenu/PassButton" to="Camera2D/Menu" method="_on_pass_button_pressed"]
+[connection signal="pressed" from="Camera2D/Menu/InterimMenu/DrawButton" to="Camera2D/Menu" method="_on_draw_button_pressed"]

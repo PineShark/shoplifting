@@ -14,6 +14,9 @@ func setObjects(new_throw_s,new_shop_s):
 	throw_object_scene = new_throw_s
 	shop_object_scene = new_shop_s
 
+func setTexture(new_texture):
+	sprite.texture = new_texture
+
 func getMouseSelected():
 	return mouse_selected
 
