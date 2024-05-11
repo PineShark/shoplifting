@@ -32,7 +32,7 @@ func _process(delta):
 			spawn_point = top_spawn_points.pick_random()
 			target = top_buildings.pick_random()
 
-		if randf()>0.9: # Spawn customer
+		if randf()>0.2: # Spawn customer
 			var customer:Customer = customer_scene.instantiate()
 			add_child(customer)
 			customer.setPosition(spawn_point)
