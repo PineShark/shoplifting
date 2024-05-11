@@ -4,7 +4,7 @@ extends Node2D
 @onready var top_buildings:Array[Building] = [$"../Building3"]
 
 var bottom_spawn_points:Array[Vector2] = [Vector2(0,-225),Vector2(5000,-225)]
-var top_spawn_points:Array[Vector2] = [Vector2(0,-1500), Vector2(5000,-1500)]
+var top_spawn_points:Array[Vector2] = [Vector2(0,-1400), Vector2(5000,-1400)]
 
 var enemy_scene =  preload("res://scenes/enemy.tscn") as PackedScene
 var customer_scene = preload("res://scenes/customer.tscn") as PackedScene

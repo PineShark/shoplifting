@@ -8,6 +8,7 @@ var selected_card = null
 @onready var interimMenu = $InterimMenu as Control
 @onready var card_scene = preload("res://scenes/card.tscn") as PackedScene
 @onready var throw_object_scene = preload("res://scenes/thrown_object.tscn") as PackedScene
+@onready var player = $"../.." as Player
 
 func _process(delta):
 	timeLabel.text = str(int(wave_time))
@@ -24,13 +25,15 @@ func _process(delta):
 				selected_card.dropped()
 				selected_card.queue_free()
 	
-	else: # If mouse not already down:
+	else: # INFO If mouse not already down: Try and place a card
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			mouse_down = true
 			# Check which card is selected
 			for i in range(card_hand.size()):
 				if card_hand[i].getMouseSelected():
-					selected_card = card_hand.pop_at(i)
+					if card_hand[i].getPrice() <= player.getMoney():
+						player.subMoney(card_hand[i].getPrice())
+						selected_card = card_hand.pop_at(i)
 					break
 
 	if selected_card != null:

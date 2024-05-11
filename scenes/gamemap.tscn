@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://djrmi0j4t8xv0"]
+[gd_scene load_steps=17 format=3 uid="uid://djrmi0j4t8xv0"]
 
 [ext_resource type="PackedScene" uid="uid://dar77my7yuet8" path="res://scenes/pause_menu.tscn" id="1_3lf8m"]
 [ext_resource type="Texture2D" uid="uid://bdyrbgvvni3lr" path="res://art/Sprite sheets/Road Sprite Sheet.png" id="1_7kmfa"]
 [ext_resource type="Texture2D" uid="uid://dcxlsminbhlh6" path="res://art/temp_sprites/light blue square.png" id="1_qfbly"]
 [ext_resource type="PackedScene" uid="uid://b7ywcnwhbar5x" path="res://scenes/player.tscn" id="3_s4cbc"]
+[ext_resource type="Script" path="res://scripts/tilemap.gd" id="3_u66c2"]
 [ext_resource type="PackedScene" uid="uid://lb06fyk0f5in" path="res://scenes/killzone.tscn" id="4_khwdw"]
 [ext_resource type="PackedScene" uid="uid://bx8vpiu1yw7fl" path="res://scenes/building.tscn" id="5_32qsi"]
 [ext_resource type="PackedScene" uid="uid://c4b2n82owajbn" path="res://scenes/milkery.tscn" id="7_3yvm6"]
@@ -31,6 +32,36 @@ texture = ExtResource("1_7kmfa")
 4:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:4/0/physics_layer_0/angular_velocity = 0.0
 4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:0/0 = 0
+8:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:0/0/physics_layer_0/angular_velocity = 0.0
+8:1/0 = 0
+8:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:1/0/physics_layer_0/angular_velocity = 0.0
+8:2/0 = 0
+8:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:2/0/physics_layer_0/angular_velocity = 0.0
+8:3/0 = 0
+8:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:3/0/physics_layer_0/angular_velocity = 0.0
+8:4/0 = 0
+8:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:4/0/physics_layer_0/angular_velocity = 0.0
+8:5/0 = 0
+8:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:5/0/physics_layer_0/angular_velocity = 0.0
+8:6/0 = 0
+8:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:6/0/physics_layer_0/angular_velocity = 0.0
+8:7/0 = 0
+8:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:7/0/physics_layer_0/angular_velocity = 0.0
+8:8/0 = 0
+8:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:8/0/physics_layer_0/angular_velocity = 0.0
+3:5/0 = 0
+3:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:5/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_7mb54"]
 physics_layer_0/collision_layer = 1
@@ -73,13 +104,15 @@ sources/1 = SubResource("TileSetAtlasSource_j4xhr")
 [node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("1_3lf8m")]
 
 [node name="Tileset tilemap" type="TileMap" parent="."]
+z_index = 1
 texture_filter = 1
-position = Vector2(1627, -185)
+position = Vector2(1539, -128)
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_7mb54")
 collision_animatable = true
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 196608, 4, 131069, 196608, 4, 131070, 196608, 4, 131071, 196608, 4, 65536, 196608, 4, 65537, 196608, 4, 65538, 196608, 4, 1, 196608, 4, 2, 196608, 4, 3, 196608, 4, 4, 196608, 4, 5, 196608, 4, 6, 196608, 4, 7, 196608, 4, 65535, 196608, 4, 65534, 196608, 4, 65533, 196608, 4, 65532, 196608, 4, 65531, 196608, 4, 65530, 196608, 4, 65528, 196608, 4, 65529, 196608, 4, 65527, 196608, 4, 65526, 196608, 4, 65525, 196608, 4, 65524, 196608, 4, 65523, 196608, 4, 65522, 196608, 4, 65521, 196608, 4, 65520, 196608, 4, 65519, 196608, 4, 65518, 196608, 4, 65517, 196608, 4, 65516, 196608, 4, 65513, 196608, 4, 65512, 196608, 4, 65511, 196608, 4, 65510, 196608, 4, 65514, 196608, 4, 65515, 196608, 4, 65509, 196608, 4, 65508, 196608, 4, 8, 196608, 4, 9, 196608, 4, 10, 196608, 4, 11, 196608, 4, 12, 196608, 4, 13, 196608, 4, 14, 196608, 4, 15, 196608, 4, 16, 196608, 4, 17, 196608, 4, 18, 196608, 4, 19, 196608, 4, 20, 196608, 4, 21, 196608, 4, 22, 196608, 4, 23, 196608, 4, 24, 196608, 4, 25, 196608, 4, 26, 196608, 4, 27, 196608, 4, 28, 196608, 4, 29, 196608, 4, 30, 196608, 4, 31, 196608, 4, 32, 196608, 4, 33, 196608, 4, 34, 196608, 4, 35, 196608, 4, 36, 196608, 4, 37, 196608, 4, 38, 196608, 4, 39, 196608, 4, 40, 196608, 4, 41, 196608, 4, 42, 196608, 4, 43, 196608, 4, 44, 196608, 4, 45, 196608, 4, 46, 196608, 4, 47, 196608, 4, 48, 196608, 4, 49, 196608, 4, 50, 196608, 4, 51, 196608, 4, 52, 196608, 4, 53, 196608, 4, 54, 196608, 4, 55, 196608, 4, 56, 196608, 4, 57, 196608, 4, 58, 196608, 4, 59, 196608, 4, 60, 196608, 4, 61, 196608, 4, 62, 196608, 4, 63, 196608, 4)
+script = ExtResource("3_u66c2")
 
 [node name="Player" parent="." instance=ExtResource("3_s4cbc")]
 position = Vector2(1628, -226)
@@ -99,7 +132,7 @@ shape = SubResource("RectangleShape2D_3mt05")
 debug_color = Color(0.808447, 0.224566, 0.85237, 0.42)
 
 [node name="Road2" type="StaticBody2D" parent="Road"]
-position = Vector2(-578, -1215)
+position = Vector2(-578, -1008)
 collision_layer = 32
 collision_mask = 2
 
@@ -120,7 +153,7 @@ collision_layer = 2
 collision_mask = 3
 
 [node name="Building" parent="." instance=ExtResource("5_32qsi")]
-position = Vector2(631, -851)
+position = Vector2(631, -868)
 size = 2
 
 [node name="Building2" parent="." instance=ExtResource("5_32qsi")]

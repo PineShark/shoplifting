@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 
 const SPEED = 900.0
-const JUMP_VELOCITY = -2400.0
+const JUMP_VELOCITY = -1200.0
 
 var position1 = Vector2(0,0)
 var position2 = Vector2(0,0)
@@ -29,10 +29,16 @@ func _physics_process(delta):
 		velocity.y += gravity * delta *2
 	# Handle getting up / down from platform
 	if Input.is_action_pressed("Down"):
-
 		set_collision_mask_value(6,false)
+		set_collision_mask_value(9,false)
 	else:
 		set_collision_mask_value(6,true)
+		set_collision_mask_value(9,true)
+	
+	if velocity.y < 0:
+		set_collision_mask_value(9,false)
+	elif not Input.is_action_pressed("Down"):
+		set_collision_mask_value(9,true)
 
 	# Handle jump.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
@@ -123,5 +129,5 @@ func subMoney(amount):
 	money -=amount
 	money_label.text = ("Money:"+str(money))
 
-func getmoney():
+func getMoney():
 	return money

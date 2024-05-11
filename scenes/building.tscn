@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx8vpiu1yw7fl"]
+[gd_scene load_steps=5 format=3 uid="uid://bx8vpiu1yw7fl"]
 
 [ext_resource type="Texture2D" uid="uid://dp6miife85ttk" path="res://art/temp_sprites/2storybuilding.png" id="1_eaq53"]
 [ext_resource type="Script" path="res://scripts/building.gd" id="1_g6wg5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ker3v"]
 size = Vector2(504, 687)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12qgl"]
+size = Vector2(50.8, 20)
 
 [node name="Building" type="RigidBody2D"]
 collision_layer = 2
@@ -22,3 +25,19 @@ shape = SubResource("RectangleShape2D_ker3v")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(0, 343)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(254, 22)
+scale = Vector2(10, 2)
+shape = SubResource("RectangleShape2D_12qgl")
+debug_color = Color(0.774842, 0.242562, 0.904648, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(250, 315)
+scale = Vector2(10, 2)
+shape = SubResource("RectangleShape2D_12qgl")
+debug_color = Color(0.774842, 0.242562, 0.904648, 0.42)
