@@ -16,7 +16,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var thrown_scene = preload("res://scenes/thrown_object.tscn")
 @onready var guidance_line = $GuidanceLine as Sprite2D
 @onready var animated_sprite = $AnimatedSprite2D as AnimatedSprite2D
-@onready var money_label = $Camera2D/MoneyLabel as Label
+@onready var money_label = $CanvasLayer/HBoxContainer/MoneyLabel as Label
 
 var nearest_thing = null
 var held_thing = null 
