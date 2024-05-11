@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjmgqugrx6fvx"
-path="res://.godot/imported/Mouse.png-ec3370c68fe6e0dc2a689e66447fe44e.ctex"
+uid="uid://bge0tbkad4mtt"
+path="res://.godot/imported/Paralax Tileset.png-b4e3a7a3924473c13a3a9e62b598d61b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Other/Mouse.png"
-dest_files=["res://.godot/imported/Mouse.png-ec3370c68fe6e0dc2a689e66447fe44e.ctex"]
+source_file="res://art/Paralax Tileset.png"
+dest_files=["res://.godot/imported/Paralax Tileset.png-b4e3a7a3924473c13a3a9e62b598d61b.ctex"]
 
 [params]
 
