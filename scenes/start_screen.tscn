@@ -4,7 +4,7 @@
 
 [node name="StartScreen" type="Node2D"]
 
-[node name="Button" type="Button" parent="."]
+[node name="Start" type="Button" parent="."]
 offset_left = 450.0
 offset_top = 237.0
 offset_right = 506.0
@@ -12,4 +12,12 @@ offset_bottom = 268.0
 text = "START"
 script = ExtResource("1_iy44u")
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[node name="Quit" type="Button" parent="."]
+offset_left = 468.0
+offset_top = 410.0
+offset_right = 515.0
+offset_bottom = 441.0
+text = "QUIT"
+
+[connection signal="pressed" from="Start" to="Start" method="_on_pressed"]
+[connection signal="pressed" from="Quit" to="Start" method="_on_button_2_pressed"]
