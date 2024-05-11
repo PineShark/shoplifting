@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bdyrbgvvni3lr" path="res://art/Sprite sheets/Road Sprite Sheet.png" id="1_7kmfa"]
 [ext_resource type="Texture2D" uid="uid://dcxlsminbhlh6" path="res://art/temp_sprites/light blue square.png" id="1_qfbly"]
 [ext_resource type="PackedScene" uid="uid://b7ywcnwhbar5x" path="res://scenes/player.tscn" id="3_s4cbc"]
-[ext_resource type="PackedScene" uid="uid://05awt3gy35w8" path="res://scenes/killzone.tscn" id="4_khwdw"]
+[ext_resource type="PackedScene" uid="uid://lb06fyk0f5in" path="res://scenes/killzone.tscn" id="4_khwdw"]
 [ext_resource type="PackedScene" uid="uid://bx8vpiu1yw7fl" path="res://scenes/building.tscn" id="5_32qsi"]
 [ext_resource type="PackedScene" uid="uid://c4b2n82owajbn" path="res://scenes/milkery.tscn" id="7_3yvm6"]
 [ext_resource type="Script" path="res://scripts/CustomerHandler.gd" id="7_65l1q"]

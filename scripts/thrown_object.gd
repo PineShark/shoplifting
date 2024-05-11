@@ -18,7 +18,7 @@ func _physics_process(delta):
 	if force>0:
 		apply_central_force(Vector2(1,0).rotated(angle)*force)
 		force = 0
-	if linear_velocity.length()==0:
+	elif linear_velocity.length()<0.1:
 		# Delete self, creating shop in its place
 		get_tree().root.add_child(held_shop)
 		held_shop.global_position = global_position+Vector2(-240,-150)
