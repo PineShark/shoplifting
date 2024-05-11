@@ -21,7 +21,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var nearest_thing = null
 var held_thing = null 
 # money
-var money = 1
+var money = 10
 
 func _physics_process(delta):
 	# Add the gravity.

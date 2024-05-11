@@ -5,12 +5,17 @@ var spawn = Vector2(0,0)
 var direction = 0
 var looking_for = "shop" 
 @onready var player:Player = null
+@onready var sprite = $AnimatedSprite2D as AnimatedSprite2D
 var purchase_timer = 1
 var purchasing = false
 var purchased = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+func setCustomerStats(texture:Texture2D,tag:String):
+	sprite.sprite_frames.set_frame("default",0,texture,1)
+	looking_for = tag
+
 func setPlayer(newplayer:Player):
 	player = newplayer
 

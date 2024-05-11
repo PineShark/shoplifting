@@ -10,6 +10,13 @@ var selected_card = null
 @onready var throw_object_scene = preload("res://scenes/thrown_object.tscn") as PackedScene
 @onready var player = $"../.." as Player
 
+var card_scene_array = [
+	preload("res://scenes/cards/butcherycard.tscn") as PackedScene,
+	preload("res://scenes/cards/toyshopcard.tscn") as PackedScene
+	
+]
+
+
 func _process(delta):
 	timeLabel.text = str(int(wave_time))
 	if wave_time <=0:
@@ -51,8 +58,13 @@ func handPositions():
 
 func _on_pass_button_pressed():
 	closeMenu()
-	var card:Card = card_scene.instantiate()
-	card.setObjects(throw_object_scene,load("res://scenes/butchery.tscn"))
-	card_hand.append(card)
-	add_child(card)
-	handPositions()
+
+
+func _on_draw_button_pressed():
+	if player.getMoney()>=2:
+		player.subMoney(2)
+		var card:Card = card_scene_array.pick_random().instantiate()
+		card_hand.append(card)
+		add_child(card)
+		handPositions()
+

@@ -6,6 +6,13 @@ extends Node2D
 var bottom_spawn_points:Array[Vector2] = [Vector2(0,-225),Vector2(5000,-225)]
 var top_spawn_points:Array[Vector2] = [Vector2(0,-1400), Vector2(5000,-1400)]
 
+var customer_sprite_array:Array[Texture2D] = [
+	preload("res://art/Customers/Meat_Customer.png")
+]
+var customer_tag_array:Array[String] = [
+	"meat"
+]
+
 var enemy_scene =  preload("res://scenes/enemy.tscn") as PackedScene
 var customer_scene = preload("res://scenes/customer.tscn") as PackedScene
 var spawn_point = Vector2(0,0)
@@ -35,9 +42,11 @@ func _process(delta):
 		if randf()>0.2: # Spawn customer
 			var customer:Customer = customer_scene.instantiate()
 			add_child(customer)
+			customer.setCustomerStats(customer_sprite_array[0],customer_tag_array[0])
 			customer.setPosition(spawn_point)
 			customer.setTarget(target)
 			customer.setPlayer(player)
+			customer.set
 		else: # spawn enemy
 			var enemy:Enemy = enemy_scene.instantiate()
 			add_child(enemy)
