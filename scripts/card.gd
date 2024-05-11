@@ -4,6 +4,7 @@ extends Node2D
 var throw_object_scene:PackedScene = null
 var shop_object_scene:PackedScene = null
 var mouse_selected = false
+var price = 1
 @onready var sprite = $Sprite2D as Sprite2D
 
 func setPosition(new_position):
@@ -33,3 +34,6 @@ func _on_area_2d_mouse_entered():
 
 func _on_area_2d_mouse_exited():
 	mouse_selected = false
+
+func getPrice():
+	return price
