@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://djrmi0j4t8xv0"]
+[gd_scene load_steps=16 format=3 uid="uid://djrmi0j4t8xv0"]
 
 [ext_resource type="PackedScene" uid="uid://c741e6io1id78" path="res://scenes/pause_menu.tscn" id="1_3lf8m"]
 [ext_resource type="Texture2D" uid="uid://bdyrbgvvni3lr" path="res://art/Sprite sheets/Road Sprite Sheet.png" id="1_7kmfa"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c4b2n82owajbn" path="res://scenes/milkery.tscn" id="7_3yvm6"]
 [ext_resource type="Script" path="res://scripts/CustomerHandler.gd" id="7_65l1q"]
 [ext_resource type="PackedScene" uid="uid://bxnti1l5g6oot" path="res://scenes/butchery.tscn" id="8_6t0ou"]
+[ext_resource type="Texture2D" uid="uid://v1g1e2q7b4ux" path="res://art/Paralax Tileset.png" id="10_qav0b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6lfmi"]
 texture = ExtResource("1_7kmfa")
@@ -39,13 +40,39 @@ sources/0 = SubResource("TileSetAtlasSource_6lfmi")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mt05"]
 size = Vector2(5752, 255)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j4xhr"]
+texture = ExtResource("10_qav0b")
+0:18/size_in_atlas = Vector2i(2, 2)
+0:18/0 = 0
+2:18/size_in_atlas = Vector2i(2, 2)
+2:18/0 = 0
+4:18/size_in_atlas = Vector2i(2, 2)
+4:18/0 = 0
+8:18/size_in_atlas = Vector2i(2, 2)
+8:18/0 = 0
+8:16/size_in_atlas = Vector2i(2, 2)
+8:16/0 = 0
+18:18/size_in_atlas = Vector2i(2, 2)
+18:18/0 = 0
+18:16/size_in_atlas = Vector2i(2, 2)
+18:16/0 = 0
+18:14/size_in_atlas = Vector2i(2, 2)
+18:14/0 = 0
+16:16/size_in_atlas = Vector2i(2, 2)
+16:16/0 = 0
+16:14/size_in_atlas = Vector2i(2, 2)
+16:14/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ij0nf"]
+sources/1 = SubResource("TileSetAtlasSource_j4xhr")
+
 [node name="World" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("1_3lf8m")]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Tileset tilemap" type="TileMap" parent="."]
 texture_filter = 1
 position = Vector2(1627, -185)
 scale = Vector2(4, 4)
@@ -114,3 +141,14 @@ position = Vector2(2608, -570)
 position = Vector2(1114, -1752)
 
 [node name="ShopInWorldHandler" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_offset = Vector2(100, 100)
+
+[node name="tilemap2" type="TileMap" parent="ParallaxBackground"]
+tile_set = SubResource("TileSet_ij0nf")
+rendering_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(-917415, 1, 18, -786338, 1, 18, -982948, 1, 18, -982954, 1, 18)
