@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbirx3bkn7qa8"
-path="res://.godot/imported/Meat_Customer.png-c7a32c016c9c0a4c70607f0fa45974a4.ctex"
+uid="uid://dxlwnf3u34v2q"
+path="res://.godot/imported/Milk_Customer.png-b23f19c27bb46f0c0ddf48aac2955c17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Customers/Meat_Customer.png"
-dest_files=["res://.godot/imported/Meat_Customer.png-c7a32c016c9c0a4c70607f0fa45974a4.ctex"]
+source_file="res://art/Customers/Milk_Customer.png"
+dest_files=["res://.godot/imported/Milk_Customer.png-b23f19c27bb46f0c0ddf48aac2955c17.ctex"]
 
 [params]
 
