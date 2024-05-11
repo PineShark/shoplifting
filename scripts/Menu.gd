@@ -4,11 +4,12 @@ var wave_time = 10.0
 var card_hand = []
 var mouse_down = false
 var selected_card = null
-@onready var timeLabel = $timeLabel as Label
-@onready var interimMenu = $InterimMenu as Control
+@onready var timeLabel = $"../../CanvasLayer/HBoxContainer2/timeLabel" as Label
+@onready var interimMenu = $"../../CanvasLayer/InterimMenu" as Control
 @onready var card_scene = preload("res://scenes/cards/card.tscn") as PackedScene
 @onready var throw_object_scene = preload("res://scenes/thrown_object.tscn") as PackedScene
 @onready var player = $"../.." as Player
+@onready var cardhand_control = $"../../CanvasLayer/CardHand" as Control
 
 var card_scene_array = [
 	preload("res://scenes/cards/butcherycard.tscn") as PackedScene,
@@ -54,7 +55,7 @@ func closeMenu():
 func handPositions():
 	var startingPosition = Vector2(0,350)
 	for i in range(card_hand.size()):
-		card_hand[i].global_position = global_position+startingPosition+(Vector2(100,0)*i)
+		card_hand[i].global_position = cardhand_control.global_position+(Vector2(100,0)*i)
 
 func _on_pass_button_pressed():
 	closeMenu()
@@ -65,6 +66,6 @@ func _on_draw_button_pressed():
 		player.subMoney(2)
 		var card:Card = card_scene_array.pick_random().instantiate()
 		card_hand.append(card)
-		add_child(card)
+		cardhand_control.add_child(card)
 		handPositions()
 

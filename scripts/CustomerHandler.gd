@@ -28,6 +28,7 @@ var countdowntimer = countdowntime
 
 func _ready():
 	print(player.get_class())
+	rand_from_seed(Time.get_unix_time_from_system())
 
 func _process(delta):
 	countdowntimer-=delta
