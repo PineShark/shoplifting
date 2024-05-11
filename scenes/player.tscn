@@ -1,11 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://c2ox1uwcae37s"]
+[gd_scene load_steps=19 format=3 uid="uid://b7ywcnwhbar5x"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_4wtb3"]
+[ext_resource type="Script" path="res://scripts/Menu.gd" id="2_6ghw0"]
 [ext_resource type="Texture2D" uid="uid://b65kv246ddkbp" path="res://art/Player/player.png" id="2_gbqte"]
 [ext_resource type="Texture2D" uid="uid://boscx0o8foiso" path="res://art/Player/Grab-Sheet.png" id="3_j74yn"]
 [ext_resource type="Texture2D" uid="uid://et5lvxka6l0j" path="res://art/temp_sprites/beige square.png" id="3_jhpub"]
 [ext_resource type="Texture2D" uid="uid://galt2neix2w1" path="res://art/Player/Hold1.png" id="4_r5f6s"]
 [ext_resource type="Texture2D" uid="uid://bnwm3ufedvykp" path="res://art/Player/Player_Run-Sheet.png" id="5_jpnjt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgjnr"]
+bg_color = Color(0.0100186, 0.108116, 0.153684, 0.384314)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_64t8s"]
 atlas = ExtResource("3_j74yn")
@@ -99,18 +103,54 @@ size = Vector2(20, 45)
 z_index = 5
 position = Vector2(0, -24)
 collision_layer = 4
-collision_mask = 33
+collision_mask = 289
 script = ExtResource("1_4wtb3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+process_mode = 3
 position = Vector2(-2, 1)
 
-[node name="MoneyLabel" type="Label" parent="Camera2D"]
-offset_left = 352.0
-offset_top = -316.0
-offset_right = 392.0
-offset_bottom = -293.0
-text = "dolla"
+[node name="Menu" type="Node2D" parent="Camera2D"]
+process_mode = 3
+z_index = 3
+script = ExtResource("2_6ghw0")
+
+[node name="timeLabel" type="Label" parent="Camera2D/Menu"]
+offset_left = -18.0
+offset_top = -301.0
+offset_right = 22.0
+offset_bottom = -278.0
+
+[node name="InterimMenu" type="Control" parent="Camera2D/Menu"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Camera2D/Menu/InterimMenu"]
+layout_mode = 0
+offset_left = -574.0
+offset_top = -323.0
+offset_right = 582.0
+offset_bottom = 322.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hgjnr")
+
+[node name="PassButton" type="Button" parent="Camera2D/Menu/InterimMenu"]
+layout_mode = 0
+offset_left = -108.0
+offset_top = 120.0
+offset_right = 112.0
+offset_bottom = 184.0
+text = "Pass"
+
+[node name="DrawButton" type="Button" parent="Camera2D/Menu/InterimMenu"]
+layout_mode = 0
+offset_left = -106.0
+offset_top = -151.0
+offset_right = 111.0
+offset_bottom = -81.0
+text = "Draw"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -128,3 +168,20 @@ visible = false
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_jhpub")
 centered = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_bottom = 23.0
+grow_horizontal = 0
+
+[node name="MoneyLabel" type="Label" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+text = "Money: 10"
+
+[connection signal="pressed" from="Camera2D/Menu/InterimMenu/PassButton" to="Camera2D/Menu" method="_on_pass_button_pressed"]
+[connection signal="pressed" from="Camera2D/Menu/InterimMenu/DrawButton" to="Camera2D/Menu" method="_on_draw_button_pressed"]

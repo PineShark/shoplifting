@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 
 const SPEED = 900.0
-const JUMP_VELOCITY = -2400.0
+const JUMP_VELOCITY = -1200.0
 
 var position1 = Vector2(0,0)
 var position2 = Vector2(0,0)
@@ -16,11 +16,12 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var thrown_scene = preload("res://scenes/thrown_object.tscn")
 @onready var guidance_line = $GuidanceLine as Sprite2D
 @onready var animated_sprite = $AnimatedSprite2D as AnimatedSprite2D
-@onready var money_label = $Camera2D/MoneyLabel as Label
+@onready var money_label = $CanvasLayer/HBoxContainer/MoneyLabel as Label
 
-var nearest_shop = null
-var held_shop = null 
-var money = 1
+var nearest_thing = null
+var held_thing = null 
+# money
+var money = 10
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -28,10 +29,16 @@ func _physics_process(delta):
 		velocity.y += gravity * delta *2
 	# Handle getting up / down from platform
 	if Input.is_action_pressed("Down"):
-
 		set_collision_mask_value(6,false)
+		set_collision_mask_value(9,false)
 	else:
 		set_collision_mask_value(6,true)
+		set_collision_mask_value(9,true)
+	
+	if velocity.y < 0:
+		set_collision_mask_value(9,false)
+	elif not Input.is_action_pressed("Down"):
+		set_collision_mask_value(9,true)
 
 	# Handle jump.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
@@ -46,13 +53,16 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	# Handle picking up shop
-	if Input.is_action_just_pressed("Grab") and held_shop == null and nearest_shop != null: 
+	if Input.is_action_just_pressed("Grab") and held_thing == null and nearest_thing != null: 
 		# Checks correct preconditions: nearby shop, and not holding shop, and button pressed
-		if global_position.distance_to(nearest_shop.getPosition())<1000: # Checks that shop is in range
-			pickupShop(nearest_shop)
-
+		if global_position.distance_to(nearest_thing.getPosition())<1000: # Checks that shop is in range
+			if nearest_thing is Shop:
+				pickupShop(nearest_thing)
+			elif nearest_thing is Enemy:
+				pickupEnemy(nearest_thing)
+			
 	# Handle throwing
-	elif held_shop != null:
+	elif held_thing != null:
 		if Input.is_action_just_pressed("Grab"):
 			launchObject()
 
@@ -66,15 +76,22 @@ func _physics_process(delta):
 
 func setNearestShop(shop:Shop):
 	# Adds shop as the nearest one
-	nearest_shop = shop
+	nearest_thing = shop
 
 func pickupShop(shop:Shop):
 	## Function to pick up shop, it removes shop from parent, then adds shop to player.
 	shop.getPickedUp()
-	shop.get_parent().remove_child(shop) # Removes child from building
-	add_child(shop)
+	shop.reparent(self)
 	shop.global_position = global_position + Vector2(-250,-350)
-	held_shop = shop
+	held_thing = shop
+
+func pickupEnemy(enemy:Enemy):
+	## Picks up enemy you fucking wank
+	nearest_thing.reparent(self)
+	nearest_thing.global_position = global_position+Vector2(0,-100)
+	nearest_thing.being_picked_up = true
+	held_thing = nearest_thing
+	nearest_thing = null
 
 func launchObject():
 	# Figure out angle and throw object at that angle
@@ -84,13 +101,21 @@ func launchObject():
 	else:
 		angle = -PI/6
 
-	var thrown_object = thrown_scene.instantiate()
-	thrown_object.global_position = global_position
-	get_tree().root.add_child(thrown_object)
-	thrown_object.setParameters(90000,angle,held_shop)
-	remove_child(held_shop)
-	held_shop = null
-#money
+	if held_thing is Shop:
+		var thrown_object = thrown_scene.instantiate()
+		thrown_object.global_position = global_position
+		get_tree().root.add_child(thrown_object)
+		thrown_object.setParameters(90000,angle,held_thing)
+		remove_child(held_thing)
+		held_thing = null
+	
+	elif held_thing is Enemy:
+		held_thing.throw_vector = Vector2(1,0).rotated(angle)*1000
+		held_thing.starting_height = held_thing.global_position.y
+		get_tree().root.reparent(held_thing)
+		held_thing.being_picked_up = false
+		held_thing.being_thrown = true
+		held_thing = null
 
 
 func getMoneyLabel()->Label:
@@ -104,5 +129,5 @@ func subMoney(amount):
 	money -=amount
 	money_label.text = ("Money:"+str(money))
 
-func getmoney():
+func getMoney():
 	return money

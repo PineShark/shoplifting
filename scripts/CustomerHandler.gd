@@ -3,8 +3,18 @@ extends Node2D
 @onready var bottom_buildings:Array[Building] = [$"../Building",$"../Building2"]
 @onready var top_buildings:Array[Building] = [$"../Building3"]
 
-var bottom_spawn_points:Array[Vector2] = [Vector2(0,-225),Vector2(5000,-225)]
-var top_spawn_points:Array[Vector2] = [Vector2(0,-1500), Vector2(5000,-1500)]
+var bottom_spawn_points:Array[Vector2] = [Vector2(0,-128),Vector2(5000,-128)]
+var top_spawn_points:Array[Vector2] = [Vector2(0,-1200), Vector2(5000,-1200)]
+
+var customer_sprite_array:Array[SpriteFrames] = [
+	preload("res://art/Customers/meat.tres"),
+	preload("res://art/Customers/milkjug.tres"),
+	preload("res://art/Customers/brokentoy.tres"),
+	preload("res://art/Customers/baby.tres")
+]
+var customer_tag_array:Array[String] = [
+	"meat","milk","toys","baby"
+]
 
 var enemy_scene =  preload("res://scenes/enemy.tscn") as PackedScene
 var customer_scene = preload("res://scenes/customer.tscn") as PackedScene
@@ -32,12 +42,15 @@ func _process(delta):
 			spawn_point = top_spawn_points.pick_random()
 			target = top_buildings.pick_random()
 
-		if randf()>0.1: # Spawn customer
+		if randf()>0.2: # Spawn customer
+			var i = randi_range(0,3)
 			var customer:Customer = customer_scene.instantiate()
 			add_child(customer)
+			customer.setCustomerStats(customer_sprite_array[i],customer_tag_array[i])
 			customer.setPosition(spawn_point)
 			customer.setTarget(target)
 			customer.setPlayer(player)
+			customer.set
 		else: # spawn enemy
 			var enemy:Enemy = enemy_scene.instantiate()
 			add_child(enemy)

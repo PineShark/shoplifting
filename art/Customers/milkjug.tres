@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://8w2tfqq67dih"]
+
+[ext_resource type="Texture2D" uid="uid://dxlwnf3u34v2q" path="res://art/Customers/Milk_Customer.png" id="1_nf8pn"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nf8pn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
