@@ -6,13 +6,10 @@
 size = Vector2(376, 20)
 
 [node name="Killzone" type="Area2D"]
-collision_layer = 0
-collision_mask = 4
 script = ExtResource("1_7sbwf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
-scale = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_yswum")
 debug_color = Color(1, 0.191449, 0.289874, 0.42)
 
