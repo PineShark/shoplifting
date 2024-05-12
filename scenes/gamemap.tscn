@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c4b2n82owajbn" path="res://scenes/milkery.tscn" id="7_3yvm6"]
 [ext_resource type="Script" path="res://scripts/CustomerHandler.gd" id="7_65l1q"]
 [ext_resource type="PackedScene" uid="uid://bxnti1l5g6oot" path="res://scenes/butchery.tscn" id="8_6t0ou"]
-[ext_resource type="Texture2D" uid="uid://clrvnmf6vcua1" path="res://art/Sprite sheets/Paralax Tileset2.png" id="11_1ox2v"]
+[ext_resource type="Texture2D" uid="uid://b71vi7e8nr6gj" path="res://art/Paralax Tileset2.png" id="11_3gvfv"]
 [ext_resource type="Texture2D" uid="uid://bx0lk1c2t0ugs" path="res://art/parallax/sundrop.png" id="11_xxaod"]
 [ext_resource type="Texture2D" uid="uid://mrefsamunk74" path="res://art/Sprite sheets/Paralax Tileset3.png" id="12_l0k1g"]
 
@@ -304,19 +304,20 @@ motion_mirroring = Vector2(2048, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Farground"]
 z_index = -10
-position = Vector2(-312, -1479)
+position = Vector2(-138, -3001)
+scale = Vector2(1, 1.74219)
 texture = ExtResource("11_xxaod")
 centered = false
 
 [node name="Background2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.6, 0.6)
-motion_mirroring = Vector2(512, 0)
+motion_mirroring = Vector2(2550, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Background2"]
 texture_filter = 1
-position = Vector2(-303, -979)
+position = Vector2(-614, -369)
 scale = Vector2(2, 2)
-texture = ExtResource("11_1ox2v")
+texture = ExtResource("11_3gvfv")
 centered = false
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
