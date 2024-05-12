@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://la0r50ahnjgw"]
+
+[ext_resource type="Texture2D" uid="uid://bpb62i7x1qw4p" path="res://art/Customers/Meat_Customer2.png" id="1_71a2k"]
+[ext_resource type="Texture2D" uid="uid://baccqmlhn5qdw" path="res://art/Customers/Meat_Customer1.png" id="2_p61yk"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_71a2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_p61yk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

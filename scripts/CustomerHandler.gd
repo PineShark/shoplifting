@@ -7,13 +7,14 @@ var bottom_spawn_points:Array[Vector2] = [Vector2(0,-152),Vector2(5000,-152)]
 var top_spawn_points:Array[Vector2] = [Vector2(0,-1052), Vector2(5000,-1052)]
 
 var customer_sprite_array:Array[SpriteFrames] = [
-	preload("res://art/Customers/meat.tres"),
+	preload("res://art/Customers/meatanim.tres"),
 	preload("res://art/Customers/milkjug.tres"),
-	preload("res://art/Customers/brokentoy.tres"),
-	preload("res://art/Customers/baby.tres")
+	preload("res://art/Customers/toyanim.tres"),
+	preload("res://art/Customers/baby.tres"),
+	preload("res://art/Customers/dripman.tres")
 ]
 var customer_tag_array:Array[String] = [
-	"meat","milk","toys","baby"
+	"meat","milk","toys","baby","drip"
 ]
 
 var enemy_scene =  preload("res://scenes/enemy.tscn") as PackedScene

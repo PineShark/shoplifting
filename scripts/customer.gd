@@ -14,6 +14,7 @@ var purchased = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func setCustomerStats(texture:SpriteFrames,tag:String):
 	sprite.sprite_frames = texture
+	sprite.play("default")
 	looking_for = tag
 
 func setPlayer(newplayer:Player):
