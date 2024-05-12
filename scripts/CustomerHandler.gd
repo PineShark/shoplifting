@@ -3,8 +3,8 @@ extends Node2D
 @onready var bottom_buildings:Array[Building] = [$"../Building",$"../Building2"]
 @onready var top_buildings:Array[Building] = [$"../Building3"]
 
-var bottom_spawn_points:Array[Vector2] = [Vector2(0,-128),Vector2(5000,-128)]
-var top_spawn_points:Array[Vector2] = [Vector2(0,-1015), Vector2(5000,-1015)]
+var bottom_spawn_points:Array[Vector2] = [Vector2(0,-152),Vector2(5000,-152)]
+var top_spawn_points:Array[Vector2] = [Vector2(0,-1052), Vector2(5000,-1052)]
 
 var customer_sprite_array:Array[SpriteFrames] = [
 	preload("res://art/Customers/meat.tres"),

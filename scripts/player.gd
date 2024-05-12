@@ -23,6 +23,9 @@ var held_thing = null
 # money
 var money = 100
 
+func _ready():
+	animated_sprite.play()
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
