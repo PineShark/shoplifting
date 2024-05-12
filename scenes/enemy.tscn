@@ -25,6 +25,7 @@ shape = SubResource("CircleShape2D_n552n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(1, -22)
 texture = ExtResource("3_y8rtp")
 
 [connection signal="body_entered" from="pickupZone" to="." method="_on_pickup_zone_body_entered"]
