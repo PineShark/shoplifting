@@ -31,7 +31,7 @@ func _process(delta):
 		interimMenu.visible = true
 		if not done_tax:
 			if player.getMoney()-wave_tax[wave]<0:
-				get_tree().change_scene_to_packed(load("res://scenes/start_screen.tscn")) 
+				get_tree().change_scene_to_packed(load("res://scenes/end_screen.tscn")) 
 			elif not_changed_money_yet:
 				player.subMoney(wave_tax[wave])
 				not_changed_money_yet = false
