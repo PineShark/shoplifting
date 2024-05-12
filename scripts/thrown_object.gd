@@ -28,7 +28,7 @@ func _physics_process(delta):
 	elif linear_velocity.length()<0.1:
 		# Delete self, creating shop in its place
 		get_tree().root.add_child(held_shop)
-		held_shop.global_position = global_position+Vector2(-240,-150)
+		held_shop.global_position = get_global_mouse_position()+Vector2(-240,-150)
 		queue_free()
 	
 	if need_texture and held_shop != null:

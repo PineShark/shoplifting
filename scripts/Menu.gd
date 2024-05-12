@@ -4,7 +4,13 @@ var wave_time = 10.0
 var card_hand = []
 var mouse_down = false
 var selected_card = null
+var done_tax = false
+var wave = 0
+var wave_tax = [10,15,20,30,40,50,75,100]
+var not_changed_money_yet = false
 @onready var timeLabel = $"../../CanvasLayer/HBoxContainer2/timeLabel" as Label
+@onready var rentLabel = $"../../CanvasLayer/HBoxContainer/RentLabel" as Label
+@onready var waveLabel = $"../../CanvasLayer/HBoxContainer2/WaveLabel" as Label
 @onready var interimMenu = $"../../CanvasLayer/InterimMenu" as Control
 @onready var card_scene = preload("res://scenes/cards/card.tscn") as PackedScene
 @onready var throw_object_scene = preload("res://scenes/thrown_object.tscn") as PackedScene
@@ -23,6 +29,13 @@ func _process(delta):
 	if wave_time <=0:
 		get_tree().paused = true
 		interimMenu.visible = true
+		if not done_tax:
+			if player.getMoney()-wave_tax[wave]<0:
+				get_tree().change_scene_to_packed(load("res://scenes/end_screen.tscn")) 
+			elif not_changed_money_yet:
+				player.subMoney(wave_tax[wave])
+				not_changed_money_yet = false
+			done_tax = true
 	else:
 		wave_time-=delta
 	
@@ -32,8 +45,9 @@ func _process(delta):
 			if selected_card != null:
 				selected_card.dropped()
 				selected_card.queue_free()
+				selected_card = null
 	
-	else: # INFO If mouse not already down: Try and place a card
+	else: # INFO If mouse not down but was before: Try and grab a card
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			mouse_down = true
 			# Check which card is selected
@@ -42,6 +56,8 @@ func _process(delta):
 					if card_hand[i].getPrice() <= player.getMoney():
 						player.subMoney(card_hand[i].getPrice())
 						selected_card = card_hand.pop_at(i)
+						selected_card.reparent(self)
+						
 					break
 
 	if selected_card != null:
@@ -58,8 +74,18 @@ func handPositions():
 		card_hand[i].global_position = cardhand_control.global_position+(Vector2(100,0)*i)
 
 func _on_pass_button_pressed():
+	changeWave()
 	closeMenu()
+	done_tax = false
+	not_changed_money_yet = true
 
+func changeWave():
+	wave+=1
+	if wave < wave_tax.size():
+		rentLabel.text = ("Tax: "+str(wave_tax[wave]))
+	else:
+		rentLabel.text = ("Tax: "+str(wave_tax.back()))
+	waveLabel.text = ("Wave: "+str(wave))
 
 func _on_draw_button_pressed():
 	if player.getMoney()>=2:

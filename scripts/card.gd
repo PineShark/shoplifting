@@ -27,7 +27,7 @@ func dropped():
 	var thrown_object:ThrownObject = throw_object_scene.instantiate()
 	remove_child(shop)
 	thrown_object.setParameters(50,PI/2,shop)
-	thrown_object.setPosition(global_position)
+	thrown_object.setPosition(get_global_mouse_position())
 	get_tree().root.add_child(thrown_object)
 
 

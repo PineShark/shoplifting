@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mrefsamunk74"
-path="res://.godot/imported/Paralax Tileset3.png-500da3a2df7386cdfdfee04443aae6a2.ctex"
+uid="uid://bbmvtyaegks3p"
+path="res://.godot/imported/Nightmare_Customer-Sheet.png-c170b1d38ad42cd8e5d973635bc371b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Paralax Tileset3.png"
-dest_files=["res://.godot/imported/Paralax Tileset3.png-500da3a2df7386cdfdfee04443aae6a2.ctex"]
+source_file="res://art/Customers/Aseprite/Nightmare_Customer-Sheet.png"
+dest_files=["res://.godot/imported/Nightmare_Customer-Sheet.png-c170b1d38ad42cd8e5d973635bc371b1.ctex"]
 
 [params]
 

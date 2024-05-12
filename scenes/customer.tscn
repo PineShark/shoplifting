@@ -9,4 +9,5 @@ script = ExtResource("1_o0x0s")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -17)
+scale = Vector2(3, 3)
 sprite_frames = ExtResource("2_t4nl5")
