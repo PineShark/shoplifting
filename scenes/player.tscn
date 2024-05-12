@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_4wtb3"]
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="2_6ghw0"]
 [ext_resource type="Texture2D" uid="uid://b65kv246ddkbp" path="res://art/Player/player.png" id="2_gbqte"]
-[ext_resource type="Texture2D" uid="uid://boscx0o8foiso" path="res://art/Player/Grab-Sheet.png" id="3_j74yn"]
+[ext_resource type="Texture2D" uid="uid://buk3cv7xtjun8" path="res://art/Player/Grab-Sheet.png" id="3_j74yn"]
 [ext_resource type="Texture2D" uid="uid://et5lvxka6l0j" path="res://art/temp_sprites/beige square.png" id="3_jhpub"]
-[ext_resource type="Texture2D" uid="uid://galt2neix2w1" path="res://art/Player/Hold1.png" id="4_r5f6s"]
+[ext_resource type="Texture2D" uid="uid://dy85qful8inn0" path="res://art/Player/Hold1.png" id="4_r5f6s"]
 [ext_resource type="Texture2D" uid="uid://bnwm3ufedvykp" path="res://art/Player/Player_Run-Sheet.png" id="5_jpnjt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_64t8s"]
@@ -94,14 +94,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c44pa"]
-size = Vector2(20, 45)
+size = Vector2(27, 70.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgjnr"]
 bg_color = Color(0.0100186, 0.108116, 0.153684, 0.384314)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
-position = Vector2(0, -24)
+position = Vector2(0, -39)
 collision_layer = 4
 collision_mask = 289
 script = ExtResource("1_4wtb3")
@@ -118,13 +118,13 @@ script = ExtResource("2_6ghw0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1.90735e-06, -1.90735e-06)
-scale = Vector2(0.745, 0.745)
+position = Vector2(0, -2)
+scale = Vector2(1.265, 1.265)
 sprite_frames = SubResource("SpriteFrames_e6a5x")
 animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 1)
+position = Vector2(-1, 2.75)
 shape = SubResource("RectangleShape2D_c44pa")
 
 [node name="GuidanceLine" type="Sprite2D" parent="."]

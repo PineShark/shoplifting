@@ -28,9 +28,7 @@ func setTarget(new_target:Vector2):
 func _process(delta):
 	
 	if being_picked_up:
-		if stolen_money and player!=null:
-			player.addMoney(1)
-			stolen_money == false
+		pass
 	elif being_thrown:
 		global_position+=(throw_vector*delta)
 		if global_position.y > starting_height:

@@ -26,8 +26,6 @@ func _process(delta):
 	else:
 		wave_time-=delta
 	
-	print(mouse_down)
-	
 	if mouse_down: # if mouse already down:
 		if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			mouse_down = false

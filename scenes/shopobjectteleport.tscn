@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://o0sntwq5ya21"]
+
+[ext_resource type="Script" path="res://scripts/shopobjectteleport.gd" id="1_jt1bm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hagac"]
+
+[node name="Shopobjectteleport" type="Node2D"]
+script = ExtResource("1_jt1bm")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(5, 50)
+shape = SubResource("RectangleShape2D_hagac")
+debug_color = Color(0.528782, 0.571569, 0.00039371, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
