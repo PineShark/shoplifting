@@ -6,6 +6,7 @@ var mouse_down = false
 var selected_card = null
 var wave = 0
 var wave_tax = [10,15,20,30,40,50,75,100]
+var not_changed_money_yet = false
 @onready var timeLabel = $"../../CanvasLayer/HBoxContainer2/timeLabel" as Label
 @onready var rentLabel = $"../../CanvasLayer/HBoxContainer/RentLabel" as Label
 @onready var waveLabel = $"../../CanvasLayer/HBoxContainer2/WaveLabel" as Label
@@ -28,9 +29,10 @@ func _process(delta):
 		get_tree().paused = true
 		interimMenu.visible = true
 		if player.getMoney()-wave_tax[wave]<0:
-			get_tree().change_scene_to_packed(load("res://scenes/start_screen.tscn"))
-		else:
+			get_tree().change_scene_to_packed(load("res://scenes/start_screen.tscn")) 
+		elif not_changed_money_yet:
 			player.subMoney(wave_tax[wave])
+			not_changed_money_yet = false
 			changeWave()
 	else:
 		wave_time-=delta
@@ -71,6 +73,7 @@ func handPositions():
 
 func _on_pass_button_pressed():
 	closeMenu()
+	not_changed_money_yet = true
 
 func changeWave():
 	wave+=1
