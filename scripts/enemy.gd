@@ -10,7 +10,6 @@ var throw_vector:Vector2 = Vector2(0,0)
 var starting_height = 0
 @onready var player:Player = null
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func setPlayer(newplayer:Player):
 	player = newplayer

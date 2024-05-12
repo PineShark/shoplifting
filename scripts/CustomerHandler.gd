@@ -24,7 +24,7 @@ var target = null
 
 @onready var player = $"../Player"
 
-@export var countdowntime = 2.0
+@export var countdowntime = 0.5
 var countdowntimer = countdowntime
 
 func _ready():
@@ -44,7 +44,7 @@ func _process(delta):
 			spawn_point = top_spawn_points.pick_random()
 			target = top_buildings.pick_random()
 
-		if randf()>0.2: # Spawn customer
+		if randf()>0.05: # Spawn customer
 			var i = randi_range(0,3)
 			var customer:Customer = customer_scene.instantiate()
 			add_child(customer)

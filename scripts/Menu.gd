@@ -1,6 +1,6 @@
 extends Node2D
 
-var wave_time = 10.0
+var wave_time = 60.0
 var card_hand = []
 var mouse_down = false
 var selected_card = null
@@ -19,8 +19,10 @@ var not_changed_money_yet = false
 
 var card_scene_array = [
 	preload("res://scenes/cards/butcherycard.tscn") as PackedScene,
-	preload("res://scenes/cards/toyshopcard.tscn") as PackedScene
-	
+	preload("res://scenes/cards/toyshopcard.tscn") as PackedScene,
+	preload("res://scenes/cards/Milkstorecard.tscn") as PackedScene,
+	preload("res://scenes/cards/babystorecard.tscn") as PackedScene,
+	preload("res://scenes/cards/dripstorecard.tscn") as PackedScene
 ]
 
 
@@ -31,7 +33,7 @@ func _process(delta):
 		interimMenu.visible = true
 		if not done_tax:
 			if player.getMoney()-wave_tax[wave]<0:
-				get_tree().change_scene_to_packed(load("res://scenes/end_screen.tscn")) 
+				get_tree().change_scene_to_packed(load("res://scenes/end_screen.tscn"))
 			elif not_changed_money_yet:
 				player.subMoney(wave_tax[wave])
 				not_changed_money_yet = false
@@ -66,7 +68,7 @@ func _process(delta):
 func closeMenu():
 	interimMenu.visible = false
 	get_tree().paused = false
-	wave_time = 10
+	wave_time = 120
 
 func handPositions():
 	var startingPosition = Vector2(0,350)

@@ -21,11 +21,13 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var nearest_thing = null
 var held_thing = null 
 # money
-var money = 100
+var money = 20
+
 
 func _ready():
 	animated_sprite.play()
-
+	money_label.text = ("Money: "+str(money))
+	
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():

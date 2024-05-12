@@ -1,12 +1,23 @@
-[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dd81367g8n1dh"]
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://dd81367g8n1dh"]
 
-[ext_resource type="Texture2D" uid="uid://b2ximlwup58pf" path="res://art/Customers/Baby_Customer.png" id="1_f2mrw"]
+[ext_resource type="Texture2D" uid="uid://bbmvtyaegks3p" path="res://art/Customers/Nightmare_Customer-Sheet.png" id="1_e5wc7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfxij"]
+atlas = ExtResource("1_e5wc7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdvvx"]
+atlas = ExtResource("1_e5wc7")
+region = Rect2(32, 0, 32, 32)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_f2mrw")
+"texture": SubResource("AtlasTexture_kfxij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdvvx")
 }],
 "loop": true,
 "name": &"default",

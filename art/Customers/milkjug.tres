@@ -1,12 +1,23 @@
-[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://8w2tfqq67dih"]
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://8w2tfqq67dih"]
 
-[ext_resource type="Texture2D" uid="uid://dxlwnf3u34v2q" path="res://art/Customers/Milk_Customer.png" id="1_nf8pn"]
+[ext_resource type="Texture2D" uid="uid://8uafm3cv34p1" path="res://art/Customers/Aseprite/Milk_Customer-Sheet.png" id="1_x8lfl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obp5t"]
+atlas = ExtResource("1_x8lfl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqc8o"]
+atlas = ExtResource("1_x8lfl")
+region = Rect2(32, 0, 32, 32)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_nf8pn")
+"texture": SubResource("AtlasTexture_obp5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqc8o")
 }],
 "loop": true,
 "name": &"default",

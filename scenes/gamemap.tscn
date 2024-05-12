@@ -241,25 +241,25 @@ position = Vector2(1628, -226)
 [node name="Road" type="Node" parent="."]
 
 [node name="Building" parent="." instance=ExtResource("5_32qsi")]
-position = Vector2(612, -755)
+position = Vector2(773, -755)
 size = 2
 
 [node name="Building2" parent="." instance=ExtResource("5_32qsi")]
-position = Vector2(4014, -751)
+position = Vector2(3662, -751)
 size = 2
 
 [node name="Building3" parent="." instance=ExtResource("5_32qsi")]
-position = Vector2(2182, -1655)
+position = Vector2(2347, -1655)
 size = 2
 
 [node name="CustomerHandler" type="Node2D" parent="."]
 script = ExtResource("7_65l1q")
 
 [node name="Milkery" parent="." instance=ExtResource("7_3yvm6")]
-position = Vector2(2570, -479)
+position = Vector2(1735, -479)
 
 [node name="Butchery" parent="." instance=ExtResource("8_6t0ou")]
-position = Vector2(1152, -1329)
+position = Vector2(1563, -1329)
 
 [node name="ShopInWorldHandler" type="Node2D" parent="."]
 

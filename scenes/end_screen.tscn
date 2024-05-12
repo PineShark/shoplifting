@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bx57xdjr3r6j6"]
+[gd_scene load_steps=2 format=3 uid="uid://xfopaf05c71i"]
 
 [ext_resource type="Script" path="res://scripts/end_screen.gd" id="1_4se11"]
 
@@ -12,6 +12,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 0
 offset_left = 144.0
 offset_top = 99.0
 offset_right = 216.0
@@ -20,6 +21,7 @@ rotation = -3.13992
 scale = Vector2(-12.839, -6.87429)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer"]
+texture_filter = 1
 layout_mode = 2
 
 [node name="Restart" type="Button" parent="Control/PanelContainer/VBoxContainer"]
