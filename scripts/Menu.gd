@@ -4,6 +4,7 @@ var wave_time = 10.0
 var card_hand = []
 var mouse_down = false
 var selected_card = null
+var done_tax = false
 var wave = 0
 var wave_tax = [10,15,20,30,40,50,75,100]
 var not_changed_money_yet = false
@@ -28,12 +29,13 @@ func _process(delta):
 	if wave_time <=0:
 		get_tree().paused = true
 		interimMenu.visible = true
-		if player.getMoney()-wave_tax[wave]<0:
-			get_tree().change_scene_to_packed(load("res://scenes/start_screen.tscn")) 
-		elif not_changed_money_yet:
-			player.subMoney(wave_tax[wave])
-			not_changed_money_yet = false
-			changeWave()
+		if not done_tax:
+			if player.getMoney()-wave_tax[wave]<0:
+				get_tree().change_scene_to_packed(load("res://scenes/start_screen.tscn")) 
+			elif not_changed_money_yet:
+				player.subMoney(wave_tax[wave])
+				not_changed_money_yet = false
+			done_tax = true
 	else:
 		wave_time-=delta
 	
@@ -72,7 +74,9 @@ func handPositions():
 		card_hand[i].global_position = cardhand_control.global_position+(Vector2(100,0)*i)
 
 func _on_pass_button_pressed():
+	changeWave()
 	closeMenu()
+	done_tax = false
 	not_changed_money_yet = true
 
 func changeWave():
