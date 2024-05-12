@@ -142,9 +142,16 @@ centered = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -80.0
-offset_bottom = 23.0
+offset_left = -278.0
+offset_right = -42.0
+offset_bottom = 67.0
 grow_horizontal = 0
+
+[node name="RentLabel" type="Label" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "Rent: 10"
 
 [node name="MoneyLabel" type="Label" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
@@ -164,6 +171,11 @@ grow_horizontal = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "0"
+
+[node name="WaveLabel" type="Label" parent="CanvasLayer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Wave: 1"
 
 [node name="InterimMenu" type="Control" parent="CanvasLayer"]
 process_mode = 3

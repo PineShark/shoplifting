@@ -4,7 +4,11 @@ var wave_time = 10.0
 var card_hand = []
 var mouse_down = false
 var selected_card = null
+var wave = 0
+var wave_tax = [10,15,20,30,40,50,75,100]
 @onready var timeLabel = $"../../CanvasLayer/HBoxContainer2/timeLabel" as Label
+@onready var rentLabel = $"../../CanvasLayer/HBoxContainer/RentLabel" as Label
+@onready var waveLabel = $"../../CanvasLayer/HBoxContainer2/WaveLabel" as Label
 @onready var interimMenu = $"../../CanvasLayer/InterimMenu" as Control
 @onready var card_scene = preload("res://scenes/cards/card.tscn") as PackedScene
 @onready var throw_object_scene = preload("res://scenes/thrown_object.tscn") as PackedScene
@@ -23,6 +27,11 @@ func _process(delta):
 	if wave_time <=0:
 		get_tree().paused = true
 		interimMenu.visible = true
+		if player.getMoney()-wave_tax[wave]<0:
+			get_tree().change_scene_to_packed(load("res://scenes/start_screen.tscn"))
+		else:
+			player.subMoney(wave_tax[wave])
+			changeWave()
 	else:
 		wave_time-=delta
 	
@@ -63,6 +72,13 @@ func handPositions():
 func _on_pass_button_pressed():
 	closeMenu()
 
+func changeWave():
+	wave+=1
+	if wave < wave_tax.size():
+		rentLabel.text = ("Tax: "+str(wave_tax[wave]))
+	else:
+		rentLabel.text = ("Tax: "+str(wave_tax.back()))
+	waveLabel.text = ("Wave: "+str(wave))
 
 func _on_draw_button_pressed():
 	if player.getMoney()>=2:
