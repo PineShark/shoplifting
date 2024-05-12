@@ -10,6 +10,8 @@
 [ext_resource type="Script" path="res://scripts/CustomerHandler.gd" id="7_65l1q"]
 [ext_resource type="PackedScene" uid="uid://bxnti1l5g6oot" path="res://scenes/butchery.tscn" id="8_6t0ou"]
 [ext_resource type="Texture2D" uid="uid://b0so1fe10sfbm" path="res://art/Sprite sheets/Paralax Tileset.png" id="10_qav0b"]
+[ext_resource type="Texture2D" uid="uid://bt358xw8rlij4" path="res://art/Sprite sheets/Paralax Tileset2.png" id="11_1ox2v"]
+[ext_resource type="Texture2D" uid="uid://bx0lk1c2t0ugs" path="res://art/parallax/sundrop.png" id="11_xxaod"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6lfmi"]
 texture = ExtResource("1_7kmfa")
@@ -167,69 +169,6 @@ texture = ExtResource("1_7kmfa")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2s3lh"]
 texture = ExtResource("1_7kmfa")
-8:0/0 = 0
-8:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-8:0/0/physics_layer_0/angular_velocity = 0.0
-8:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
-8:0/0/physics_layer_1/angular_velocity = 0.0
-8:0/0/physics_layer_2/linear_velocity = Vector2(0, 0)
-8:0/0/physics_layer_2/angular_velocity = 0.0
-8:1/0 = 0
-8:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-8:1/0/physics_layer_0/angular_velocity = 0.0
-8:1/0/physics_layer_1/linear_velocity = Vector2(0, 0)
-8:1/0/physics_layer_1/angular_velocity = 0.0
-8:1/0/physics_layer_2/linear_velocity = Vector2(0, 0)
-8:1/0/physics_layer_2/angular_velocity = 0.0
-8:2/0 = 0
-8:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-8:2/0/physics_layer_0/angular_velocity = 0.0
-8:2/0/physics_layer_1/linear_velocity = Vector2(0, 0)
-8:2/0/physics_layer_1/angular_velocity = 0.0
-8:2/0/physics_layer_2/linear_velocity = Vector2(0, 0)
-8:2/0/physics_layer_2/angular_velocity = 0.0
-8:3/0 = 0
-8:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-8:3/0/physics_layer_0/angular_velocity = 0.0
-8:3/0/physics_layer_1/linear_velocity = Vector2(0, 0)
-8:3/0/physics_layer_1/angular_velocity = 0.0
-8:3/0/physics_layer_2/linear_velocity = Vector2(0, 0)
-8:3/0/physics_layer_2/angular_velocity = 0.0
-8:4/0 = 0
-8:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-8:4/0/physics_layer_0/angular_velocity = 0.0
-8:4/0/physics_layer_1/linear_velocity = Vector2(0, 0)
-8:4/0/physics_layer_1/angular_velocity = 0.0
-8:4/0/physics_layer_2/linear_velocity = Vector2(0, 0)
-8:4/0/physics_layer_2/angular_velocity = 0.0
-8:5/0 = 0
-8:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-8:5/0/physics_layer_0/angular_velocity = 0.0
-8:5/0/physics_layer_1/linear_velocity = Vector2(0, 0)
-8:5/0/physics_layer_1/angular_velocity = 0.0
-8:5/0/physics_layer_2/linear_velocity = Vector2(0, 0)
-8:5/0/physics_layer_2/angular_velocity = 0.0
-8:6/0 = 0
-8:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-8:6/0/physics_layer_0/angular_velocity = 0.0
-8:6/0/physics_layer_1/linear_velocity = Vector2(0, 0)
-8:6/0/physics_layer_1/angular_velocity = 0.0
-8:6/0/physics_layer_2/linear_velocity = Vector2(0, 0)
-8:6/0/physics_layer_2/angular_velocity = 0.0
-8:7/0 = 0
-8:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-8:7/0/physics_layer_0/angular_velocity = 0.0
-8:7/0/physics_layer_1/linear_velocity = Vector2(0, 0)
-8:7/0/physics_layer_1/angular_velocity = 0.0
-8:7/0/physics_layer_2/linear_velocity = Vector2(0, 0)
-8:7/0/physics_layer_2/angular_velocity = 0.0
-8:8/0 = 0
-8:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-8:8/0/physics_layer_0/angular_velocity = 0.0
-8:8/0/physics_layer_1/linear_velocity = Vector2(0, 0)
-8:8/0/physics_layer_1/angular_velocity = 0.0
-8:8/0/physics_layer_2/linear_velocity = Vector2(0, 0)
-8:8/0/physics_layer_2/angular_velocity = 0.0
 3:5/0 = 0
 3:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:5/0/physics_layer_0/angular_velocity = 0.0
@@ -248,29 +187,6 @@ physics_layer_2/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_6lfmi")
 sources/2 = SubResource("TileSetAtlasSource_f1v7q")
 sources/3 = SubResource("TileSetAtlasSource_2s3lh")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j4xhr"]
-texture = ExtResource("10_qav0b")
-0:18/size_in_atlas = Vector2i(2, 2)
-0:18/0 = 0
-2:18/size_in_atlas = Vector2i(2, 2)
-2:18/0 = 0
-4:18/size_in_atlas = Vector2i(2, 2)
-4:18/0 = 0
-8:18/size_in_atlas = Vector2i(2, 2)
-8:18/0 = 0
-8:16/size_in_atlas = Vector2i(2, 2)
-8:16/0 = 0
-18:18/0 = 0
-18:16/0 = 0
-18:14/0 = 0
-16:16/size_in_atlas = Vector2i(2, 2)
-16:16/0 = 0
-16:14/size_in_atlas = Vector2i(2, 2)
-16:14/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_ij0nf"]
-sources/1 = SubResource("TileSetAtlasSource_j4xhr")
 
 [node name="World" type="Node2D"]
 
@@ -330,11 +246,36 @@ position = Vector2(1152, -1329)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_offset = Vector2(100, 100)
+[node name="Farground" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -10
+motion_mirroring = Vector2(2048, 0)
 
-[node name="tilemap2" type="TileMap" parent="ParallaxBackground"]
-tile_set = SubResource("TileSet_ij0nf")
-rendering_quadrant_size = 32
-format = 2
-layer_0/tile_data = PackedInt32Array(-917415, 1, 18, -786338, 1, 18, -982948, 1, 18, -982954, 1, 18)
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Farground"]
+z_index = -10
+position = Vector2(-310, -1492)
+texture = ExtResource("11_xxaod")
+centered = false
+
+[node name="Background2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(512, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Background2"]
+texture_filter = 1
+position = Vector2(-303, -979)
+scale = Vector2(2, 2)
+texture = ExtResource("11_1ox2v")
+centered = false
+
+[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = 1
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(1440, 0)
+
+[node name="Foreground Buildings" type="Sprite2D" parent="ParallaxBackground/Background"]
+z_index = -3
+texture_filter = 1
+position = Vector2(-299, -1727)
+scale = Vector2(5, 5)
+texture = ExtResource("10_qav0b")
+centered = false
