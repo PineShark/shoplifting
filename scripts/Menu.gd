@@ -26,14 +26,17 @@ func _process(delta):
 	else:
 		wave_time-=delta
 	
+	print(mouse_down)
+	
 	if mouse_down: # if mouse already down:
 		if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			mouse_down = false
 			if selected_card != null:
 				selected_card.dropped()
 				selected_card.queue_free()
+				selected_card = null
 	
-	else: # INFO If mouse not already down: Try and place a card
+	else: # INFO If mouse not down but was before: Try and grab a card
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			mouse_down = true
 			# Check which card is selected
@@ -42,6 +45,8 @@ func _process(delta):
 					if card_hand[i].getPrice() <= player.getMoney():
 						player.subMoney(card_hand[i].getPrice())
 						selected_card = card_hand.pop_at(i)
+						selected_card.reparent(self)
+						
 					break
 
 	if selected_card != null:
