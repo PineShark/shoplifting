@@ -279,7 +279,7 @@ sources/1 = SubResource("TileSetAtlasSource_j4xhr")
 [node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("1_3lf8m")]
 
 [node name="Tileset tilemap" type="TileMap" parent="."]
-z_index = 1
+z_index = -1
 texture_filter = 1
 position = Vector2(1548, -128)
 scale = Vector2(4, 4)

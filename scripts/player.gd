@@ -21,7 +21,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var nearest_thing = null
 var held_thing = null 
 # money
-var money = 10
+var money = 100
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -55,6 +55,7 @@ func _physics_process(delta):
 	# Handle picking up shop
 	if Input.is_action_just_pressed("Grab") and held_thing == null and nearest_thing != null: 
 		# Checks correct preconditions: nearby shop, and not holding shop, and button pressed
+		animated_sprite.play("grab")
 		if global_position.distance_to(nearest_thing.getPosition())<1000: # Checks that shop is in range
 			if nearest_thing is Shop:
 				pickupShop(nearest_thing)
@@ -131,3 +132,14 @@ func subMoney(amount):
 
 func getMoney():
 	return money
+
+
+
+
+func _on_animated_sprite_2d_animation_looped():
+	if held_thing != null:
+		animated_sprite.play("hold1")
+	elif velocity.length()>1:
+		animated_sprite.play("run")
+	else:
+		animated_sprite.play("default")

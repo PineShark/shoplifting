@@ -109,6 +109,7 @@ script = ExtResource("1_4wtb3")
 [node name="Camera2D" type="Camera2D" parent="."]
 process_mode = 3
 position = Vector2(-2, 1)
+zoom = Vector2(0.7, 0.7)
 
 [node name="Menu" type="Node2D" parent="Camera2D"]
 process_mode = 3
@@ -120,7 +121,7 @@ texture_filter = 1
 position = Vector2(1.90735e-06, -1.90735e-06)
 scale = Vector2(0.745, 0.745)
 sprite_frames = SubResource("SpriteFrames_e6a5x")
-frame_progress = 0.240026
+animation = &"grab"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 1)
@@ -163,6 +164,7 @@ text = "0"
 
 [node name="InterimMenu" type="Control" parent="CanvasLayer"]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -214,5 +216,6 @@ offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 0
 
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="pressed" from="CanvasLayer/InterimMenu/PassButton" to="Camera2D/Menu" method="_on_pass_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/InterimMenu/DrawButton" to="Camera2D/Menu" method="_on_draw_button_pressed"]
